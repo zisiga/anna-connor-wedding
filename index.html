@@ -345,6 +345,7 @@
       section {
         position: relative;
         min-height: 100vh;
+        min-height: 100dvh;
         padding: calc(var(--nav-h) + 80px) var(--edge) 80px;
         display: flex;
         flex-direction: column;
@@ -499,8 +500,11 @@
       @media (max-width: 760px) {
         .hero-d {
           grid-template-columns: 1fr;
-          grid-template-rows: 1fr auto auto;
+          grid-template-rows: 1fr auto auto auto;
           column-gap: 0;
+        }
+        .hero-d-names {
+          font-size: clamp(56px, 17vw, 90px);
         }
         .name-anna {
           grid-row: 2;
@@ -512,6 +516,10 @@
           grid-column: 1;
           grid-row: 4;
           text-align: left;
+          padding-top: 16px;
+        }
+        .hero-d-right .getting-married {
+          font-size: clamp(20px, 5vw, 28px);
         }
       }
 
@@ -519,6 +527,7 @@
 
       .hero {
         min-height: 100vh;
+        min-height: 100dvh;
         padding: calc(var(--nav-h) + 40px) var(--edge) 40px;
         justify-content: space-between;
         position: relative;
@@ -627,7 +636,9 @@
       #story {
         padding: 0;
         min-height: 100vh;
+        min-height: 100dvh;
         height: 100vh;
+        height: 100dvh;
         overflow: visible;
         position: relative;
         scroll-snap-align: start;
@@ -681,6 +692,7 @@
         width: 100%;
         height: 100%;
         max-height: calc(100vh - var(--nav-h) - 160px);
+        max-height: calc(100dvh - var(--nav-h) - 160px);
       }
       .bay .photo {
         position: absolute;
@@ -857,6 +869,25 @@
           left: 24px;
           right: 24px;
           bottom: 18px;
+        }
+        .bay {
+          width: 80vw !important;
+        }
+        .bay-inner {
+          display: flex;
+          align-items: stretch;
+          gap: 8px;
+          max-height: none;
+        }
+        .bay .photo {
+          position: relative !important;
+          left: auto !important;
+          right: auto !important;
+          top: auto !important;
+          bottom: auto !important;
+          width: auto !important;
+          height: auto !important;
+          flex: 1;
         }
       }
 
@@ -1978,6 +2009,16 @@
         .weekend-plate {
           margin: 0 calc(-1 * var(--edge)) 32px;
         }
+        #story {
+          margin-top: 0;
+        }
+        #story::before {
+          display: none;
+        }
+        #faq {
+          rotate: 0deg !important;
+          border-radius: 0 !important;
+        }
       }
       @media (max-width: 560px) {
         :root {
@@ -2000,9 +2041,6 @@
     <nav class="nav is-hidden" id="nav">
       <span class="mark">Anna <i style="font-family:var(--serif);font-style:italic;">&</i> Connor</span>
       <ul>
-        <li>
-          <a data-to="story">About Us</a>
-        </li>
         <li>
           <a data-to="schedule">Schedule</a>
         </li>
