@@ -1,0 +1,3121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anna & Connor — 15.08.2026</title>
+    <meta name="description" content="Anna & Connor — Saturday, 15 August 2026. Swan Lake, NY.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=Inter+Tight:ital,wght@0,300..700;1,300..700&display=swap" rel="stylesheet">
+    <style>
+
+      /* ── PP Fragment (local) ─────────────────────────────────────── */
+
+      @font-face {
+        font-family: 'PP Fragment Glare';
+        src: url("fonts/PPFragment-GlareLight.otf") format('opentype');
+        font-style: normal;
+        font-weight: 300;
+        font-display: swap;
+      }
+      @font-face {
+        font-family: 'PP Fragment Glare';
+        src: url("fonts/PPFragment-GlareLightItalic.otf") format('opentype');
+        font-style: italic;
+        font-weight: 300;
+        font-display: swap;
+      }
+      @font-face {
+        font-family: 'PP Fragment Glare';
+        src: url("fonts/PPFragment-GlareRegular.otf") format('opentype');
+        font-style: normal;
+        font-weight: 400;
+        font-display: swap;
+      }
+      @font-face {
+        font-family: 'PP Fragment Glare';
+        src: url("fonts/PPFragment-GlareRegularItalic.otf") format('opentype');
+        font-style: italic;
+        font-weight: 400;
+        font-display: swap;
+      }
+      @font-face {
+        font-family: 'PP Fragment Glare';
+        src: url("fonts/PPFragment-GlareExtraBold.otf") format('opentype');
+        font-style: normal;
+        font-weight: 800;
+        font-display: swap;
+      }
+      @font-face {
+        font-family: 'PP Fragment Glare';
+        src: url("fonts/PPFragment-GlareExtraBoldItalic.otf") format('opentype');
+        font-style: italic;
+        font-weight: 800;
+        font-display: swap;
+      }
+      @font-face {
+        font-family: 'PP Fragment Sans';
+        src: url("fonts/PPFragment-SansLight.otf") format('opentype');
+        font-style: normal;
+        font-weight: 300;
+        font-display: swap;
+      }
+      @font-face {
+        font-family: 'PP Fragment Sans';
+        src: url("fonts/PPFragment-SansLightItalic.otf") format('opentype');
+        font-style: italic;
+        font-weight: 300;
+        font-display: swap;
+      }
+      @font-face {
+        font-family: 'PP Fragment Sans';
+        src: url("fonts/PPFragment-SansRegular.otf") format('opentype');
+        font-style: normal;
+        font-weight: 400;
+        font-display: swap;
+      }
+      @font-face {
+        font-family: 'PP Fragment Sans';
+        src: url("fonts/PPFragment-SansRegularItalic.otf") format('opentype');
+        font-style: italic;
+        font-weight: 400;
+        font-display: swap;
+      }
+      @font-face {
+        font-family: 'PP Fragment Sans';
+        src: url("fonts/PPFragment-SansExtraBold.otf") format('opentype');
+        font-style: normal;
+        font-weight: 800;
+        font-display: swap;
+      }
+      @font-face {
+        font-family: 'PP Fragment Sans';
+        src: url("fonts/PPFragment-SansExtraBoldItalic.otf") format('opentype');
+        font-style: italic;
+        font-weight: 800;
+        font-display: swap;
+      }
+
+      /* ── Palette ─────────────────────────────────────────────────── */
+      :root {
+        --ink: #1A1E2E;
+        --paper: #ffffff;
+        --paper-2: #EAE4D3;
+        --blue: #4A6FE3;
+        --signal: #EB5520;
+        --meadow: #CFEA8E;
+
+        /* Backward-compat aliases */
+        --terra: var(--signal);
+        --sage: var(--meadow);
+        --yellow: var(--signal);
+        --cream: var(--paper-2);
+        --rust: var(--signal);
+        --plum: var(--ink);
+
+        --serif: 'PP Fragment Glare', 'Fraunces', 'Times New Roman', serif;
+        --sans: 'PP Fragment Sans', 'Inter Tight', 'Helvetica Neue', Arial, sans-serif;
+
+        --wt-sans-body: 400;
+        --wt-sans-ui: 800;
+        --wt-serif-body: 380;
+        --wt-serif-display: 420;
+
+        --edge: 40px;
+        --r: 10px;
+        --r-lg: 16px;
+        --r-xl: 20px;
+        --r-pill: 3rem;
+        --nav-h: 52px;
+
+        --amp: var(--blue);
+      }
+
+      /* ── Reset ───────────────────────────────────────────────────── */
+
+      *,
+      *::after,
+      *::before {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      html {
+        scroll-behavior: smooth;
+        width: 100%;
+        overflow-x: hidden;
+        scroll-snap-type: y proximity;
+      }
+      body {
+        width: 100%;
+        font-family: var(--sans);
+        font-size: 15px;
+        line-height: 1.5;
+        color: var(--ink);
+        background: var(--paper);
+        -webkit-font-smoothing: antialiased;
+        text-rendering: optimizeLegibility;
+        overflow-x: hidden;
+      }
+      ::selection {
+        background: var(--ink);
+        color: var(--paper);
+      }
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+      img,
+      video {
+        display: block;
+        max-width: 100%;
+      }
+      button {
+        font: inherit;
+        color: inherit;
+        background: none;
+        border: none;
+        cursor: pointer;
+      }
+
+      /* ── Typography roles ────────────────────────────────────────── */
+
+      /* Headline serif */
+      .day-row .date-stack .dom,
+      .day-row .title,
+      .faq-item button.q,
+      .faq-wrap h2,
+      .field input,
+      .field select,
+      .field textarea,
+      .poster .copy .lead,
+      .poster .copy h2,
+      .rsvp-left .deadline b,
+      .rsvp-left h2,
+      .schedule-header h2,
+      .stacked-name,
+      .stay-hero h2,
+      .stay-item h4,
+      .travel-card h3 {
+        font-family: var(--serif);
+        font-variation-settings: 'opsz' 144, 'SOFT' 50;
+        font-weight: var(--wt-serif-display);
+        font-feature-settings: 'ss01', 'liga', 'calt';
+      }
+
+      /* Roman-only — no italicising em inside display heads */
+      .amp,
+      .faq-item button.q em,
+      .faq-wrap h2 em,
+      .poster .copy h2 em,
+      .rsvp-left h2 em,
+      .stacked-name .amp,
+      .stay-hero h2 em,
+      em {
+        font-style: normal;
+        font-family: inherit;
+        font-weight: inherit;
+        font-variation-settings: inherit;
+        letter-spacing: inherit;
+      }
+
+      /* Small-label UI */
+      .big-choice button .lbl,
+      .day-row .date-stack,
+      .day-row .when,
+      .edge-label,
+      .faq-item button.q .idx,
+      .field label,
+      .hero-meta-grid,
+      .meta,
+      .nav,
+      .rsvp-meta,
+      .stay-item .tag,
+      .travel-card li {
+        font-family: var(--sans);
+        font-weight: var(--wt-sans-ui);
+        font-size: 11px;
+        letter-spacing: 0.08em;
+      }
+
+      /* Body copy */
+      .day-row .desc,
+      .faq-item .a p,
+      .poster .copy p,
+      .rsvp-left p,
+      .stay-hero p,
+      .stay-item p,
+      .step p,
+      .travel-card p {
+        font-family: var(--sans);
+        font-weight: var(--wt-sans-body);
+      }
+
+      /* ── NAV ─────────────────────────────────────────────────────── */
+
+      .nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: var(--nav-h);
+        z-index: 200;
+        display: flex;
+        align-items: center;
+        padding: 0 var(--edge);
+        background: rgba(243,238,228,0.88);
+        backdrop-filter: blur(14px);
+        -webkit-backdrop-filter: blur(14px);
+        border-bottom: 1px solid rgba(0,0,0,0.08);
+        font-family: var(--sans);
+        font-weight: 800;
+        font-size: 11px;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        transition: transform 0.5s cubic-bezier(.16,1,.3,1), background 0.3s, color 0.3s, border-color 0.3s;
+      }
+      .nav.is-hidden {
+        transform: translateY(-100%);
+      }
+      .nav.on-dark {
+        background: rgba(0,0,0,0.85);
+        color: var(--paper);
+        border-bottom-color: rgba(243,238,228,0.12);
+      }
+      .nav .mark {
+        margin-right: auto;
+        font-weight: 800;
+      }
+      .nav .mark b {
+        font-weight: 500;
+      }
+      .nav ul {
+        display: flex;
+        list-style: none;
+        gap: 2px;
+      }
+      .nav a {
+        display: inline-flex;
+        align-items: center;
+        padding: 8px 14px;
+        color: inherit;
+        opacity: 0.55;
+        transition: opacity 0.2s, background 0.2s;
+        cursor: pointer;
+        border-radius: var(--r-pill);
+      }
+      .nav a:hover {
+        opacity: 1;
+      }
+      .nav a.is-active {
+        opacity: 1;
+        background: rgba(0,0,0,0.08);
+      }
+      .nav.on-dark a.is-active {
+        background: rgba(243,238,228,0.12);
+      }
+      .nav .date {
+        font-family: var(--sans);
+        font-weight: 400;
+        font-size: 11px;
+        opacity: 0.55;
+        margin-left: 20px;
+        letter-spacing: 0.04em;
+      }
+
+      @media (max-width: 760px) {
+        .nav {
+          padding: 0 16px;
+          font-size: 10px;
+        }
+        .nav ul {
+          gap: 0;
+        }
+        .nav a {
+          padding: 8px;
+        }
+        .nav .date {
+          display: none;
+        }
+      }
+
+      /* ── SECTION SHELL ───────────────────────────────────────────── */
+
+      section {
+        position: relative;
+        min-height: 100vh;
+        padding: calc(var(--nav-h) + 80px) var(--edge) 80px;
+        display: flex;
+        flex-direction: column;
+      }
+
+      section[data-field="paper"] {
+        color: var(--ink);
+        background: var(--paper);
+      }
+      section[data-field="ink"] {
+        background: var(--ink);
+        color: var(--paper);
+      }
+      section[data-field="blue"] {
+        background: var(--blue);
+        color: var(--paper);
+      }
+      section[data-field="signal"] {
+        background: var(--signal);
+        color: var(--paper);
+      }
+      section[data-field="meadow"] {
+        background: var(--meadow);
+        color: var(--ink);
+      }
+      /* Legacy aliases */
+      section[data-field="sage"] {
+        background: var(--meadow);
+        color: var(--ink);
+      }
+      section[data-field="terra"] {
+        background: var(--signal);
+        color: var(--paper);
+      }
+      section[data-field="yellow"] {
+        background: var(--signal);
+        color: var(--paper);
+      }
+      section[data-field="cream"] {
+        background: var(--paper);
+        color: var(--ink);
+      }
+      section[data-field="rust"] {
+        background: var(--signal);
+        color: var(--paper);
+      }
+
+      .meta {
+        font-family: var(--sans);
+        font-weight: 800;
+        font-size: 11px;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        opacity: 0.7;
+      }
+      .edge-label {
+        position: absolute;
+        font-family: var(--sans);
+        font-weight: 800;
+        font-size: 11px;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        opacity: 0.75;
+      }
+      .edge-label.top-right {
+        top: calc(var(--nav-h) + 24px);
+        right: var(--edge);
+      }
+      .edge-label.bottom-left {
+        bottom: 24px;
+        left: var(--edge);
+      }
+      .edge-label.bottom-right {
+        bottom: 24px;
+        right: var(--edge);
+      }
+
+      .section-num {
+        position: absolute;
+        top: calc(var(--nav-h) + 24px);
+        left: var(--edge);
+        font-family: var(--sans);
+        font-weight: 800;
+        font-size: 11px;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        opacity: 0.7;
+        display: flex;
+        gap: 16px;
+        align-items: center;
+      }
+      .section-num::before {
+        content: '';
+        width: 28px;
+        height: 1px;
+        background: currentColor;
+        opacity: 0.5;
+      }
+
+      /* ── HERO — Option D ─────────────────────────────────────────── */
+
+      /* Anna / & / Connor become direct grid items via display:contents on h1.
+   "are getting married" sits in the same row as Connor — zero guesswork. */
+      .hero-d {
+        flex: 1;
+        display: grid;
+        grid-template-columns: 1.8fr 1fr;
+        grid-template-rows: 1fr auto auto;
+        column-gap: 40px;
+      }
+      .hero-d-names {
+        display: contents;
+        /* inherited by children even through display:contents */
+        font-family: var(--serif);
+        font-weight: 600;
+        font-size: clamp(90px, 16vw, 300px);
+        line-height: 0.82;
+        letter-spacing: -0.01em;
+        color: var(--signal);
+      }
+      .name-anna {
+        grid-column: 1;
+        grid-row: 2;
+      }
+      .name-connor {
+        grid-column: 1;
+        grid-row: 3;
+      }
+      .hero-d-names .amp {
+        font-size: 0.6em;
+        font-weight: 800;
+        /* font-style: italic; */
+        color: var(--signal);
+      }
+      .hero-d-right {
+        grid-column: 2;
+        grid-row: 3;
+        align-self: end;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        text-align: left;
+      }
+      .hero-d-right .getting-married {
+        font-family: var(--serif);
+        font-weight: 300;
+        font-size: clamp(22px, 2.8vw, 44px);
+        line-height: 1.05;
+        letter-spacing: -0.02em;
+        color: var(--paper);
+      }
+      @media (max-width: 760px) {
+        .hero-d {
+          grid-template-columns: 1fr;
+          grid-template-rows: 1fr auto auto;
+          column-gap: 0;
+        }
+        .name-anna {
+          grid-row: 2;
+        }
+        .name-connor {
+          grid-row: 3;
+        }
+        .hero-d-right {
+          grid-column: 1;
+          grid-row: 4;
+          text-align: left;
+        }
+      }
+
+      /* ── HERO ────────────────────────────────────────────────────── */
+
+      .hero {
+        min-height: 100vh;
+        padding: calc(var(--nav-h) + 40px) var(--edge) 40px;
+        justify-content: space-between;
+        position: relative;
+        overflow: hidden;
+        color: var(--paper);
+      }
+      .hero > *:not(.hero-media) {
+        position: relative;
+        z-index: 1;
+      }
+
+      .hero-meta-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 24px;
+        font-family: var(--sans);
+        font-weight: 800;
+        font-size: 11px;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+      .hero-meta-grid > div > span:first-child {
+        display: block;
+        opacity: 0.5;
+        margin-bottom: 4px;
+      }
+      .hero-meta-grid > div:nth-child(2) {
+        text-align: center;
+      }
+      .hero-meta-grid > div:nth-child(3) {
+        text-align: right;
+      }
+
+      .hero-type {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin: 40px 0;
+      }
+
+      .stacked-name {
+        font-family: var(--serif);
+        font-weight: 800;
+        font-size: clamp(90px, 22vw, 360px);
+        line-height: 0.82;
+        letter-spacing: -0.04em;
+        color: var(--paper);
+      }
+      .stacked-name .line {
+        display: block;
+        position: relative;
+      }
+      .stacked-name .amp {
+        font-style: normal;
+        color: var(--signal);
+        letter-spacing: -0.02em;
+      }
+
+      /* Full-bleed media slot */
+      .hero-media {
+        position: absolute;
+        inset: 0;
+        z-index: 0;
+        overflow: hidden;
+        background: transparent;
+      }
+      .hero-media > img,
+      .hero-media > video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+      .hero-media > video {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+      }
+      /* Legibility scrim */
+      .hero-media::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(180deg, rgba(0,0,0,0.05) 0%, rgba(0,0,0,0.25) 35%, rgba(0,0,0,0.55) 75%, rgba(0,0,0,0.72) 100%);
+        pointer-events: none;
+      }
+
+      @media (max-width: 760px) {
+        .hero-meta-grid {
+          grid-template-columns: 1fr;
+          gap: 8px;
+        }
+        .hero-meta-grid > div:nth-child(2),
+        .hero-meta-grid > div:nth-child(3) {
+          text-align: left;
+        }
+        .stacked-name {
+          font-size: clamp(64px, 26vw, 200px);
+        }
+      }
+
+      /* ── STORY — horizontal exhibition ──────────────────────────── */
+
+      #story {
+        padding: 0;
+        min-height: 100vh;
+        height: 100vh;
+        overflow: visible;
+        position: relative;
+        scroll-snap-align: start;
+        margin-top: 18rem;
+        opacity: 0;
+        transform: translateY(2rem);
+        transition: opacity 0.9s ease, transform 0.9s ease;
+      }
+      #story::before {
+        content: '';
+        position: absolute;
+        top: -18rem;
+        left: 0;
+        right: 0;
+        height: 18rem;
+        background: var(--signal);
+        pointer-events: none;
+      }
+      #story.is-visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      #story .edge-label.top-right,
+      #story .section-num {
+        z-index: 3;
+      }
+
+      .story-track {
+        height: 100%;
+        width: 100%;
+        overflow-x: auto;
+        overflow-y: hidden;
+        display: flex;
+        align-items: stretch;
+        scroll-behavior: auto;
+        scrollbar-width: none;
+      }
+      .story-track::-webkit-scrollbar {
+        height: 0;
+      }
+
+      /* Bay (photo columns) */
+      .bay {
+        flex: 0 0 auto;
+        position: relative;
+        height: 100%;
+        padding: calc(var(--nav-h) + 70px) 0 90px;
+      }
+      .bay-inner {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        max-height: calc(100vh - var(--nav-h) - 160px);
+      }
+      .bay .photo {
+        position: absolute;
+        overflow: hidden;
+        background: rgba(0,0,0,0.04);
+        border-radius: var(--r);
+      }
+      .bay .photo img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+
+      /* Chapter (text columns) */
+      .chapter {
+        flex: 0 0 auto;
+        height: 100%;
+        width: 440px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: calc(var(--nav-h) + 100px) 40px 120px;
+        position: relative;
+      }
+      .chapter .meta {
+        font-family: var(--sans);
+        font-weight: 800;
+        font-size: 11px;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        opacity: 0.6;
+        margin-bottom: 18px;
+      }
+      .chapter h3 {
+        font-family: var(--serif);
+        font-weight: 400;
+        font-size: clamp(28px, 2.4vw, 40px);
+        line-height: 1.08;
+        letter-spacing: -0.01em;
+        margin-bottom: 14px;
+      }
+      .chapter h3 em {
+        font-style: normal;
+      }
+      .chapter p {
+        font-family: var(--serif);
+        font-size: 16px;
+        line-height: 1.45;
+        max-width: 32ch;
+        opacity: 0.88;
+      }
+
+      /* Intro chapter */
+      .chapter.intro {
+        width: 580px;
+        padding: calc(var(--nav-h) + 110px) 60px 130px 40px;
+        justify-content: flex-start;
+        align-items: center;
+        text-align: center;
+      }
+      .chapter.intro h2 {
+        font-family: var(--serif);
+        font-weight: 800;
+        font-size: clamp(48px, 5.2vw, 84px);
+        line-height: 0.94;
+        letter-spacing: -0.02em;
+        margin-bottom: 26px;
+      }
+      .chapter.intro h2 em {
+        font-style: normal;
+      }
+      .chapter.intro .lead {
+        font-family: var(--serif);
+        font-size: clamp(18px, 1.4vw, 22px);
+        line-height: 1.4;
+        margin-bottom: 18px;
+        max-width: 38ch;
+        opacity: 0.92;
+      }
+      .chapter.intro p {
+        font-family: var(--sans);
+        font-size: 1rem;
+        line-height: 1.6;
+        max-width: 40ch;
+        opacity: 0.78;
+        margin-bottom: 12px;
+      }
+      .chapter.intro .hint {
+        margin-top: 22px;
+        font-family: var(--sans);
+        font-weight: 800;
+        font-size: 11px;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        opacity: 0.6;
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+      }
+      .chapter.intro .hint::after {
+        content: '';
+        width: 60px;
+        height: 1px;
+        background: currentColor;
+        opacity: 0.6;
+      }
+
+      /* Closing chapter */
+      .chapter.closing p {
+        font-family: var(--sans);
+        font-size: 1rem;
+        line-height: 1.6;
+        opacity: 0.78;
+      }
+
+      /* Progress bar */
+      .story-progress {
+        position: absolute;
+        left: var(--edge);
+        right: var(--edge);
+        bottom: 28px;
+        display: flex;
+        align-items: center;
+        gap: 18px;
+        font-family: var(--sans);
+        font-weight: 800;
+        font-size: 11px;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        opacity: 0.7;
+        pointer-events: none;
+        z-index: 3;
+        color: var(--ink);
+      }
+      .story-progress .rail {
+        flex: 1;
+        height: 1px;
+        background: rgba(0,0,0,0.18);
+        position: relative;
+        overflow: hidden;
+      }
+      .story-progress .rail .fill {
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: 0;
+        background: var(--ink);
+        transition: width 0.18s linear;
+      }
+      .story-progress .scroll-arrow {
+        flex: 0 0 auto;
+        font-family: var(--serif);
+        font-weight: 800;
+        font-size: clamp(32px, 4vw, 56px);
+        line-height: 1;
+        letter-spacing: 0;
+        text-transform: none;
+        opacity: 1;
+        margin-left: 4px;
+        transform: translateY(-2px);
+      }
+
+      @media (max-width: 860px) {
+        .chapter {
+          width: 320px;
+          padding: calc(var(--nav-h) + 60px) 24px 80px;
+        }
+        .chapter.intro {
+          width: 88vw;
+        }
+        .story-progress {
+          left: 24px;
+          right: 24px;
+          bottom: 18px;
+        }
+      }
+
+      /* ── WEEKEND PLATE ───────────────────────────────────────────── */
+
+      .weekend-plate {
+        margin: 0 calc(-1 * var(--edge)) 16px;
+        position: relative;
+      }
+      .weekend-plate .plate-img {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        padding: 0 40px;
+      }
+      .weekend-plate .plate-img img {
+        display: block;
+        max-width: 60vw;
+        width: 100%;
+        height: auto;
+        border-radius: var(--r);
+        opacity: 0;
+        transition: opacity 0.6s ease;
+      }
+      .weekend-plate .plate-img img.loaded {
+        opacity: 1;
+      }
+      .weekend-plate figcaption {
+        max-width: 780px;
+        margin: 8px auto 0;
+        padding: 0 40px;
+        font-family: var(--sans);
+        font-weight: 400;
+        font-size: 10px;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        opacity: 0.5;
+        color: var(--ink);
+        text-align: left;
+      }
+      .weekend-plate figcaption .place {
+        display: none;
+      }
+
+      @media (max-width: 860px) {
+        .weekend-plate .plate-img {
+          padding: 0 16px;
+        }
+        .weekend-plate figcaption {
+          padding: 0 16px;
+        }
+      }
+
+      /* ── SCHEDULE ────────────────────────────────────────────────── */
+
+      .schedule-header h2 {
+        font-family: var(--serif);
+        font-weight: 800;
+        font-size: clamp(56px, 8vw, 120px);
+        line-height: 0.88;
+        letter-spacing: -0.03em;
+        margin-bottom: 16px;
+        color: var(--rust);
+      }
+      .schedule {
+        margin: 32px auto 0;
+        flex: 1;
+        border-top: 1px solid rgba(0,0,0,0.12);
+        max-width: 50vw;
+      }
+      .schedule-days {
+        display: grid;
+        grid-template-columns: 1fr;
+      }
+
+      .day-row {
+        display: grid;
+        grid-template-columns: 110px 1fr 160px;
+        gap: 24px;
+        padding: 3rem 0;
+        border-bottom: 1px solid rgba(0,0,0,0.12);
+        align-items: flex-start;
+      }
+      .day-row .date-stack {
+        font-family: var(--sans);
+        font-weight: 800;
+        font-size: 11px;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+      .day-row .date-stack .dom {
+        font-family: var(--serif);
+        font-weight: 800;
+        font-size: 42px;
+        line-height: 1;
+        letter-spacing: -0.02em;
+        margin: 6px 0 4px;
+        color: var(--rust);
+        text-transform: none;
+      }
+      .day-row .title {
+        font-family: var(--sans);
+        font-weight: 800;
+        font-size: clamp(22px, 2.2vw, 28px);
+        line-height: 1.05;
+        color: var(--blue);
+      }
+      .day-row .desc {
+        font-size: 1rem;
+        line-height: 1.5;
+        opacity: 0.85;
+        margin-top: 8px;
+        max-width: 56ch;
+      }
+      .day-row .desc + .desc {
+        margin-top: 12px;
+      }
+      .day-row .desc b {
+        font-weight: 800;
+        opacity: 1;
+      }
+      .day-row .when {
+        font-family: var(--sans);
+        font-weight: 800;
+        font-size: 11px;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        text-align: right;
+        opacity: 0.75;
+      }
+      .day-row .when .place {
+        display: block;
+        margin-top: 4px;
+        opacity: 0.7;
+      }
+
+      @media (max-width: 860px) {
+        .schedule-header h2 {
+          font-size: 72px;
+        }
+        .schedule {
+          max-width: 100%;
+        }
+        .day-row {
+          grid-template-columns: 80px 1fr;
+        }
+        .day-row .desc {
+          max-width: none;
+        }
+        .day-row .when {
+          grid-column: 1 / -1;
+          text-align: left;
+          margin-top: 8px;
+        }
+      }
+
+      /* ── TRAVEL ──────────────────────────────────────────────────── */
+
+      .poster {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr);
+        gap: 64px;
+        align-items: stretch;
+        margin-top: 48px;
+        flex: 1;
+      }
+      .poster .photo-slot {
+        aspect-ratio: 3/4;
+        overflow: hidden;
+        background: var(--paper-2);
+        border-radius: var(--r);
+      }
+      .poster .photo-slot img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+      .poster .copy h2 {
+        font-family: var(--serif);
+        font-weight: 800;
+        font-size: clamp(48px, 7vw, 96px);
+        line-height: 0.92;
+        letter-spacing: -0.025em;
+        margin-bottom: 28px;
+        max-width: 12ch;
+      }
+      .poster .copy h2 em {
+        font-style: normal;
+      }
+      .poster .copy p {
+        font-size: 17px;
+        line-height: 1.55;
+        max-width: 50ch;
+        margin-bottom: 16px;
+      }
+      .poster .copy .lead {
+        font-family: var(--sans);
+        font-size: clamp(22px, 2.2vw, 28px);
+        line-height: 1.2;
+        margin-bottom: 28px;
+      }
+      /* Solo — no photo, readable column width */
+      .poster.poster--solo {
+        display: block;
+        max-width: 68ch;
+      }
+      .poster.poster--solo .copy p {
+        max-width: 60ch;
+      }
+
+      @media (max-width: 860px) {
+        .poster {
+          grid-template-columns: 1fr;
+          gap: 32px;
+        }
+        .poster .photo-slot {
+          aspect-ratio: 4/3;
+          max-width: 420px;
+        }
+      }
+
+      .travel-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1px;
+        background: var(--paper);
+        margin-top: 64px;
+        flex: 1;
+      }
+      .travel-card {
+        background: var(--blue);
+        color: var(--paper);
+        padding: 40px 32px;
+        display: flex;
+        flex-direction: column;
+        min-height: 300px;
+        gap: 16px;
+        border-radius: var(--r);
+        overflow: hidden;
+      }
+      .travel-card .num {
+        font-family: var(--sans);
+        font-weight: 800;
+        font-size: 11px;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        opacity: 0.7;
+      }
+      .travel-card h3 {
+        font-family: var(--serif);
+        font-weight: 800;
+        font-size: clamp(28px, 3vw, 40px);
+        line-height: 1.0;
+        letter-spacing: -0.02em;
+      }
+      .travel-card p {
+        font-size: 15px;
+        line-height: 1.55;
+        opacity: 0.88;
+        margin-top: auto;
+      }
+      .travel-card ul {
+        list-style: none;
+        display: grid;
+        gap: 6px;
+        margin-top: 8px;
+      }
+      .travel-card li {
+        font-family: var(--sans);
+        font-weight: 800;
+        font-size: 11px;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        opacity: 0.82;
+        display: flex;
+        justify-content: space-between;
+        padding: 6px 0;
+        border-bottom: 1px dashed rgba(243,238,228,0.25);
+      }
+
+      @media (max-width: 860px) {
+        .travel-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      /* ── STAY ────────────────────────────────────────────────────── */
+
+      .stay-wrap {
+        display: grid;
+        grid-template-columns: minmax(320px, 1fr) minmax(0, 1.8fr);
+        gap: 64px;
+        margin-top: 56px;
+        flex: 1;
+        align-items: start;
+      }
+      .stay-hero h2 {
+        font-family: var(--serif);
+        font-weight: 800;
+        font-size: clamp(48px, 7vw, 96px);
+        line-height: 0.92;
+        letter-spacing: -0.025em;
+        margin-bottom: 24px;
+        max-width: 10ch;
+      }
+      .stay-hero h2 em {
+        font-style: normal;
+      }
+      .stay-hero p {
+        max-width: 40ch;
+        font-size: 16px;
+        line-height: 1.55;
+        opacity: 0.85;
+      }
+      .stay-hero .photo-slot {
+        margin-top: 28px;
+        aspect-ratio: 4/3;
+        overflow: hidden;
+        border-radius: var(--r);
+        background: var(--paper-2);
+      }
+      .stay-hero .photo-slot img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+
+      .stay-list {
+        display: grid;
+        gap: 0;
+      }
+      .stay-item {
+        padding: 24px 0;
+        border-bottom: 1px solid rgba(0,0,0,0.14);
+        display: grid;
+        grid-template-columns: 1fr auto;
+        gap: 8px 16px;
+        align-items: baseline;
+      }
+      section[data-field="cream"] .stay-item {
+        border-color: rgba(0,0,0,0.18);
+      }
+      .stay-item:first-child {
+        border-top: 1px solid rgba(0,0,0,0.14);
+      }
+      .stay-item h4 {
+        font-family: var(--sans);
+        font-weight: 800;
+        font-size: clamp(22px, 2.2vw, 28px);
+        line-height: 1.05;
+      }
+      .tag {
+        font-family: var(--sans);
+        font-weight: 800;
+        font-size: 10px;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+      }
+      .stay-item p {
+        grid-column: 1 / -1;
+        font-size: 1rem;
+        line-height: 1.5;
+        opacity: 0.8;
+        max-width: 60ch;
+      }
+
+      @media (max-width: 860px) {
+        .stay-wrap {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      /* ── FAQ ─────────────────────────────────────────────────────── */
+
+      .faq-wrap {
+        display: grid;
+        grid-template-columns: minmax(320px, 1fr) minmax(0, 1.8fr);
+        gap: 64px;
+        margin-top: 64px;
+        flex: 1;
+      }
+      .faq-wrap h2 {
+        font-family: var(--serif);
+        font-weight: 800;
+        font-size: clamp(48px, 7vw, 96px);
+        line-height: 0.92;
+        letter-spacing: -0.025em;
+        max-width: 10ch;
+      }
+      .faq-wrap h2 em {
+        font-style: normal;
+      }
+
+      .faq-list {
+        display: grid;
+        gap: 0;
+        border-top: 1px solid currentColor;
+      }
+      .faq-item {
+        border-bottom: 1px solid currentColor;
+      }
+      .faq-item button.q {
+        width: 100%;
+        text-align: left;
+        padding: 22px 0;
+        display: grid;
+        grid-template-columns: 40px 1fr 28px;
+        gap: 16px;
+        align-items: center;
+        font-family: var(--sans);
+        font-weight: 800;
+        font-size: clamp(22px, 2.2vw, 28px);
+        line-height: 1.05;
+        transition: padding 0.3s;
+      }
+      .faq-item button.q:hover {
+        padding-left: 6px;
+      }
+      .faq-item button.q .idx {
+        font-family: var(--sans);
+        font-weight: 800;
+        font-size: 11px;
+        letter-spacing: 0.08em;
+        opacity: 0.6;
+      }
+      .faq-item button.q .toggle {
+        justify-self: end;
+        width: 22px;
+        height: 22px;
+        position: relative;
+      }
+      .faq-item button.q .toggle::after,
+      .faq-item button.q .toggle::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 14px;
+        height: 1.5px;
+        background: currentColor;
+        transform: translate(-50%, -50%);
+        transition: transform 0.3s;
+      }
+      .faq-item button.q .toggle::after {
+        transform: translate(-50%, -50%) rotate(90deg);
+      }
+      .faq-item.is-open button.q .toggle::after {
+        transform: translate(-50%, -50%) rotate(0);
+      }
+
+      .faq-item .a {
+        display: grid;
+        grid-template-rows: 0;
+        transition: grid-template-rows 0.4s cubic-bezier(.16,1,.3,1);
+      }
+      .faq-item .a > div {
+        overflow: hidden;
+      }
+      .faq-item.is-open .a {
+        grid-template-rows: 1fr;
+      }
+      .faq-item .a p {
+        padding: 0 0 22px 56px;
+        font-size: 16px;
+        line-height: 1.55;
+        max-width: 60ch;
+        opacity: 0.88;
+      }
+
+      @media (max-width: 860px) {
+        .faq-wrap {
+          grid-template-columns: 1fr;
+        }
+        .faq-item button.q {
+          grid-template-columns: 32px 1fr 24px;
+        }
+        .faq-item .a p {
+          padding-left: 48px;
+        }
+      }
+
+      /* ── THINGS TO DO ────────────────────────────────────────────── */
+
+      .todo-section {
+        margin-top: 64px;
+        padding-top: 48px;
+        border-top: 1px solid rgba(255,255,255,0.2);
+      }
+      .todo-section > .meta {
+        margin-bottom: 32px;
+      }
+
+      .todo-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 48px;
+      }
+
+      .todo-cat {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .todo-cat-label {
+        font-family: var(--sans);
+        font-weight: 800;
+        font-size: 11px;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        opacity: 0.5;
+        padding-bottom: 12px;
+        border-bottom: 1px solid rgba(255,255,255,0.2);
+        margin-bottom: 0;
+      }
+
+      .todo-list {
+        list-style: none;
+      }
+
+      .todo-list li {
+        padding: 14px 0;
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+      }
+
+      .todo-place {
+        display: block;
+        font-family: var(--serif);
+        font-weight: 400;
+        font-size: clamp(17px, 1.5vw, 22px);
+        line-height: 1.1;
+        letter-spacing: -0.01em;
+        margin-bottom: 3px;
+      }
+
+      .todo-desc {
+        display: block;
+        font-family: var(--sans);
+        font-weight: 400;
+        font-size: 13px;
+        line-height: 1.4;
+        opacity: 0.6;
+      }
+      .todo-place a {
+        text-decoration: underline;
+        text-decoration-color: rgba(255,255,255,0.35);
+        text-underline-offset: 3px;
+        transition: text-decoration-color 0.2s;
+      }
+      .todo-place a:hover {
+        text-decoration-color: rgba(255,255,255,1);
+      }
+
+      @media (max-width: 860px) {
+        .todo-grid {
+          grid-template-columns: 1fr;
+          gap: 32px;
+        }
+      }
+
+      /* ── RSVP ────────────────────────────────────────────────────── */
+
+      .rsvp-wrap {
+        display: grid;
+        grid-template-columns: minmax(320px, 1fr) minmax(0, 1.8fr);
+        gap: 64px;
+        margin-top: 64px;
+        flex: 1;
+        align-items: stretch;
+      }
+      .rsvp-left h2 {
+        font-family: var(--serif);
+        font-weight: 800;
+        font-size: clamp(48px, 7vw, 96px);
+        line-height: 0.92;
+        letter-spacing: -0.025em;
+        margin-bottom: 24px;
+        max-width: 10ch;
+      }
+      .rsvp-left h2 em {
+        font-style: normal;
+      }
+      .rsvp-left p {
+        max-width: 40ch;
+        font-size: 16px;
+        line-height: 1.55;
+        opacity: 0.85;
+        margin-bottom: 16px;
+      }
+      .rsvp-left .deadline {
+        margin-top: 32px;
+        font-family: var(--sans);
+        font-weight: 800;
+        font-size: 11px;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        opacity: 0.7;
+        display: grid;
+        gap: 4px;
+      }
+      .rsvp-left .deadline b {
+        font-family: var(--serif);
+        font-size: 32px;
+        font-weight: 400;
+        opacity: 1;
+        text-transform: none;
+        letter-spacing: -0.01em;
+      }
+
+      .rsvp-card {
+        background: var(--paper);
+        color: var(--ink);
+        padding: 32px;
+        display: flex;
+        flex-direction: column;
+        min-height: 460px;
+        position: relative;
+        border-radius: var(--r);
+        overflow: hidden;
+      }
+      .rsvp-progress {
+        display: grid;
+        grid-auto-flow: column;
+        grid-auto-columns: 1fr;
+        gap: 4px;
+        margin-bottom: 24px;
+      }
+      .rsvp-progress span {
+        height: 3px;
+        background: rgba(0,0,0,0.1);
+        transition: background 0.3s;
+      }
+      .rsvp-progress span.done {
+        background: var(--terra);
+      }
+      .rsvp-progress span.active {
+        background: var(--terra);
+      }
+
+      .rsvp-meta {
+        font-family: var(--sans);
+        font-weight: 800;
+        font-size: 11px;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        opacity: 0.6;
+        margin-bottom: 12px;
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .step {
+        display: none;
+        flex: 1;
+        flex-direction: column;
+      }
+      .step.is-active {
+        display: flex;
+        animation: stepIn 0.4s cubic-bezier(.16,1,.3,1);
+      }
+      @keyframes stepIn {
+        from {
+          opacity: 0;
+          transform: translateY(8px);
+        }
+      }
+
+      .step h3 {
+        font-family: var(--sans);
+        font-weight: 800;
+        font-size: clamp(22px, 2.2vw, 28px);
+        line-height: 1.05;
+        margin-bottom: 8px;
+      }
+      .step .sub {
+        font-size: 1rem;
+        opacity: 0.7;
+        margin-bottom: 24px;
+        max-width: 50ch;
+      }
+
+      .field {
+        display: grid;
+        gap: 6px;
+        margin-bottom: 16px;
+      }
+      .field label {
+        font-family: var(--sans);
+        font-weight: 800;
+        font-size: 10px;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        opacity: 0.6;
+      }
+      .field input,
+      .field select,
+      .field textarea {
+        width: 100%;
+        padding: 10px 0;
+        border: none;
+        border-bottom: 1px solid rgba(0,0,0,0.2);
+        background: transparent;
+        font: inherit;
+        font-family: var(--serif);
+        font-weight: 400;
+        font-size: 22px;
+        color: var(--ink);
+        outline: none;
+        border-radius: 8px;
+        transition: border-color 0.2s;
+      }
+      .field input:focus,
+      .field select:focus,
+      .field textarea:focus {
+        border-color: var(--ink);
+      }
+      .field input::placeholder,
+      .field textarea::placeholder {
+        color: rgba(0,0,0,0.3);
+        font-style: normal;
+      }
+      .field select {
+        appearance: none;
+        cursor: pointer;
+        background: transparent url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath fill='none' stroke='%230A0A0A' stroke-width='1.5' d='M1 1l5 5 5-5'/%3E%3C/svg%3E") no-repeat right center;
+      }
+      .field-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+      }
+
+      .helper {
+        margin-top: 10px;
+        font-size: 13px;
+        line-height: 1.45;
+        opacity: 0.6;
+        max-width: 52ch;
+      }
+
+      .big-choice {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 8px;
+        margin-top: 8px;
+      }
+      .big-choice button {
+        border: 1px solid rgba(0,0,0,0.15);
+        padding: 32px 20px;
+        text-align: left;
+        display: grid;
+        gap: 6px;
+        transition: all 0.2s;
+        border-radius: var(--r-pill);
+      }
+      .big-choice button:hover {
+        border-color: var(--ink);
+      }
+      .big-choice button .lbl {
+        font-family: var(--sans);
+        font-weight: 800;
+        font-size: 10px;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        opacity: 0.55;
+      }
+      .big-choice button .val {
+        font-family: var(--serif);
+        font-weight: 400;
+        font-size: clamp(22px, 2.4vw, 32px);
+        line-height: 1.05;
+        letter-spacing: -0.015em;
+      }
+      .big-choice button.is-selected {
+        background: var(--terra);
+        color: var(--paper);
+        border-color: var(--terra);
+      }
+      .big-choice button.is-selected .lbl {
+        opacity: 0.7;
+      }
+
+      .chip-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+      .chip {
+        padding: 10px 14px;
+        border: 1px solid rgba(0,0,0,0.2);
+        font-family: var(--sans);
+        font-weight: 800;
+        font-size: 11px;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        transition: all 0.2s;
+        border-radius: var(--r-pill);
+      }
+      .chip:hover {
+        border-color: var(--ink);
+      }
+      .chip.is-selected {
+        background: var(--terra);
+        color: var(--paper);
+        border-color: var(--terra);
+      }
+
+      .step-actions {
+        margin-top: auto;
+        padding-top: 24px;
+        display: flex;
+        justify-content: space-between;
+        gap: 12px;
+      }
+      .btn {
+        padding: 12px 24px;
+        font-family: var(--sans);
+        font-weight: 800;
+        font-size: 11px;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        transition: all 0.2s;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        border: 1px solid transparent;
+        border-radius: var(--r-pill);
+      }
+      .btn.back {
+        color: rgba(0,0,0,0.5);
+      }
+      .btn.back:hover {
+        color: var(--ink);
+      }
+      .btn.next {
+        background: var(--terra);
+        color: var(--paper);
+        border-color: var(--terra);
+      }
+      .btn.next:hover {
+        background: transparent;
+        color: var(--terra);
+      }
+      .btn.next::after {
+        content: '→';
+        font-family: var(--serif);
+        font-size: 14px;
+      }
+      .btn.back::before {
+        content: '←';
+        font-family: var(--serif);
+        font-size: 14px;
+      }
+      .btn:disabled {
+        opacity: 0.3;
+        cursor: not-allowed;
+      }
+
+      .summary-list {
+        display: grid;
+        gap: 12px;
+        margin-bottom: 16px;
+      }
+      .summary-list .row {
+        display: grid;
+        grid-template-columns: 140px 1fr;
+        gap: 16px;
+        padding: 10px 0;
+        border-bottom: 1px solid rgba(0,0,0,0.1);
+        font-size: 1rem;
+      }
+      .summary-list .row .k {
+        font-family: var(--sans);
+        font-weight: 800;
+        font-size: 11px;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        opacity: 0.55;
+      }
+      .summary-list .row .v {
+        font-family: var(--serif);
+        font-weight: 400;
+        font-size: 18px;
+      }
+
+      .confirm {
+        text-align: center;
+        padding: 40px 20px;
+        margin: auto 0;
+        border-radius: var(--r);
+      }
+      .confirm .stamp {
+        display: inline-block;
+        font-family: var(--sans);
+        font-weight: 800;
+        font-size: 11px;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        padding: 8px 16px;
+        border: 1px solid var(--terra);
+        color: var(--terra);
+        margin-bottom: 24px;
+        border-radius: var(--r-pill);
+      }
+      .confirm h3 {
+        font-family: var(--serif);
+        font-weight: 400;
+        font-size: clamp(40px, 5vw, 64px);
+        line-height: 0.95;
+        letter-spacing: -0.02em;
+        margin-bottom: 16px;
+      }
+      .confirm h3 em {
+        font-style: normal;
+      }
+      .confirm p {
+        max-width: 38ch;
+        margin: 0 auto;
+        font-size: 15px;
+        line-height: 1.5;
+        opacity: 0.75;
+      }
+
+      @media (max-width: 860px) {
+        .rsvp-wrap {
+          grid-template-columns: 1fr;
+        }
+        .field-row {
+          grid-template-columns: 1fr;
+        }
+        .big-choice {
+          grid-template-columns: 1fr;
+        }
+        .summary-list .row {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      /* ── HOUSE / RENO ────────────────────────────────────────────── */
+
+      .house-top {
+        display: grid;
+        grid-template-columns: 1fr 1.6fr;
+        gap: 64px;
+        align-items: end;
+        margin-bottom: 64px;
+      }
+
+      .house-head .meta {
+        margin-bottom: 20px;
+      }
+
+      .house-head h2 {
+        font-family: var(--serif);
+        font-weight: 800;
+        font-size: clamp(52px, 8.5vw, 130px);
+        line-height: 0.88;
+        letter-spacing: -0.03em;
+      }
+
+      .house-photo {
+        aspect-ratio: 4/3;
+        overflow: hidden;
+        border-radius: var(--r);
+        background: rgba(255,255,255,0.06);
+      }
+      .house-photo img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+
+      .house-copy {
+        max-width: 52ch;
+        margin-bottom: 72px;
+      }
+      .house-copy p {
+        font-family: var(--serif);
+        font-weight: 300;
+        font-size: clamp(17px, 1.45vw, 23px);
+        line-height: 1.5;
+        opacity: 0.82;
+        margin-bottom: 12px;
+      }
+      .house-copy p:last-child {
+        margin-bottom: 0;
+      }
+
+      .reno-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+      }
+      .reno-arrows {
+        display: flex;
+        gap: 8px;
+      }
+      .reno-arrow {
+        width: 44px;
+        height: 44px;
+        border: 1px solid rgba(255,255,255,0.22);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: var(--serif);
+        font-size: 18px;
+        color: var(--paper);
+        cursor: pointer;
+        background: none;
+        transition: border-color 0.2s, background 0.2s;
+      }
+      .reno-arrow:hover {
+        border-color: var(--paper);
+        background: rgba(255,255,255,0.08);
+      }
+      .reno-arrow:disabled {
+        opacity: 0.22;
+        cursor: not-allowed;
+      }
+
+      .reno-viewport {
+        overflow: hidden;
+      }
+      .reno-track {
+        display: flex;
+        gap: 16px;
+        transition: transform 0.5s cubic-bezier(.16,1,.3,1);
+        will-change: transform;
+      }
+      .reno-slide {
+        flex: 0 0 calc(33.333% - 11px);
+        aspect-ratio: 4/3;
+        overflow: hidden;
+        border-radius: var(--r);
+        background: rgba(255,255,255,0.06);
+      }
+      .reno-slide img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+
+      @media (max-width: 1100px) {
+        .reno-slide {
+          flex-basis: calc(50% - 8px);
+        }
+      }
+      @media (max-width: 860px) {
+        .house-top {
+          grid-template-columns: 1fr;
+          gap: 32px;
+        }
+        .reno-slide {
+          flex-basis: calc(80%);
+        }
+      }
+
+      /* ── FOOTER ──────────────────────────────────────────────────── */
+
+      .end {
+        min-height: 60vh;
+        padding: calc(var(--nav-h) + 60px) var(--edge) 40px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 48px;
+      }
+      .end .mega {
+        font-family: var(--serif);
+        font-weight: 400;
+        font-size: clamp(72px, 13vw, 200px);
+        line-height: 0.86;
+        letter-spacing: -0.035em;
+        max-width: 12ch;
+      }
+      .end .mega em {
+        font-style: normal;
+      }
+
+      /* ── Mobile tightening ───────────────────────────────────────── */
+
+      @media (max-width: 860px) {
+        :root {
+          --edge: 20px;
+        }
+        section {
+          padding: calc(var(--nav-h) + 48px) var(--edge) 56px;
+        }
+        .faq-wrap,
+        .poster,
+        .rsvp-wrap,
+        .schedule,
+        .stay-wrap {
+          gap: 32px;
+        }
+        .faq-wrap h2,
+        .poster .copy h2,
+        .rsvp-left h2,
+        .schedule-header h2,
+        .stay-hero h2 {
+          font-size: clamp(40px, 11vw, 64px);
+          max-width: none;
+        }
+        .end .mega {
+          font-size: clamp(52px, 16vw, 96px);
+        }
+        .travel-card {
+          padding: 28px 20px;
+          min-height: 0;
+        }
+        .day-row .title {
+          font-size: 20px;
+        }
+        .weekend-plate {
+          margin: 0 calc(-1 * var(--edge)) 32px;
+        }
+      }
+      @media (max-width: 560px) {
+        :root {
+          --edge: 16px;
+        }
+        .stacked-name {
+          font-size: clamp(56px, 24vw, 140px);
+        }
+        .travel-grid {
+          margin-top: 32px;
+        }
+        .day-row {
+          padding: 18px 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+
+    <nav class="nav is-hidden" id="nav">
+      <span class="mark">Anna <i style="font-family:var(--serif);font-style:italic;">&</i> Connor</span>
+      <ul>
+        <li>
+          <a data-to="story">About Us</a>
+        </li>
+        <li>
+          <a data-to="schedule">Schedule</a>
+        </li>
+        <li>
+          <a data-to="travel">Travel</a>
+        </li>
+        <li>
+          <a data-to="stay">Stay</a>
+        </li>
+        <li>
+          <a data-to="faq">FAQ</a>
+        </li>
+        <li>
+          <a data-to="rsvp">RSVP</a>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- ─── HERO ──────────────────────────────────────── -->
+    <section class="hero" id="hero" data-field="signal" data-nav="dark">
+      <div class="hero-media">
+        <video autoplay muted loop playsinline>
+          <source src="Website Banner BVS Loop.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="hero-d">
+        <h1 class="hero-d-names">
+          <span class="name-anna">Anna<span class="amp"> &amp;</span></span>
+          <span class="name-connor">&nbsp;&nbsp;Connor</span>
+        </h1>
+        <div class="hero-d-right">
+          <p class="getting-married">are getting<br>married.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── STORY ─────────────────────────────────────── -->
+    <section id="story" data-field="signal" data-nav="dark">
+      <div class="story-track" id="storyTrack">
+
+        <div class="chapter intro">
+          <h2>“And you may <em>ask yourself,</em>
+            <em>‘Well, how did</em>
+            <em>I get here?’”</em>
+          </h2>
+        </div>
+
+        <div class="bay" style="width:540px">
+          <div class="bay-inner">
+            <div class="photo" style="left:80px; bottom:6%; width:340px; height:78%;">
+              <img src="photos/film-01.jpg" alt="">
+            </div>
+          </div>
+        </div>
+        <div class="bay" style="width:620px">
+          <div class="bay-inner">
+            <div class="photo" style="left:40px; top:6%; width:520px; height:60%;">
+              <img src="photos/film-02.jpg" alt="">
+            </div>
+          </div>
+        </div>
+
+        <div class="chapter">
+          <div class="meta">MAY 2016</div>
+          <h3>
+            <em>We met.</em>
+          </h3>
+        </div>
+
+        <div class="bay" style="width:740px">
+          <div class="bay-inner">
+            <div class="photo" style="left:20px; bottom:2%; width:240px; height:58%;">
+              <img src="photos/ac.jpg" alt="">
+            </div>
+            <div class="photo" style="left:300px; top:8%; width:420px; height:52%;">
+              <img src="photos/img-0367.jpg" alt="">
+            </div>
+          </div>
+        </div>
+        <div class="bay" style="width:380px">
+          <div class="bay-inner">
+            <div class="photo" style="left:60px; bottom:10%; width:260px; height:52%;">
+              <img src="photos/img-0522.jpg" alt="">
+            </div>
+          </div>
+        </div>
+
+        <div class="chapter">
+          <div class="meta">2017 – 2021</div>
+          <h3>And then <em>we fell in love.</em>
+          </h3>
+        </div>
+
+        <div class="bay" style="width:700px">
+          <div class="bay-inner">
+            <div class="photo" style="left:40px; top:18%; width:560px; height:68%;">
+              <img src="photos/img-0863.jpg" alt="">
+            </div>
+          </div>
+        </div>
+        <div class="bay" style="width:660px">
+          <div class="bay-inner">
+            <div class="photo" style="left:20px; top:2%; width:300px; height:40%;">
+              <img src="photos/img-0065.jpg" alt="">
+            </div>
+            <div class="photo" style="left:310px; bottom:4%; width:320px; height:62%;">
+              <img src="photos/img-1330.jpg" alt="">
+            </div>
+          </div>
+        </div>
+
+        <div class="chapter">
+          <div class="meta">SUMMER 2022</div>
+          <h3>
+            <em>Over and over</em> again.</h3>
+        </div>
+
+        <div class="bay" style="width:500px">
+          <div class="bay-inner">
+            <div class="photo" style="left:60px; top:4%; width:380px; height:88%;">
+              <img src="photos/img-6105.jpg" alt="">
+            </div>
+          </div>
+        </div>
+        <div class="bay" style="width:720px">
+          <div class="bay-inner">
+            <div class="photo" style="left:40px; top:4%; width:260px; height:46%;">
+              <img src="photos/dance.jpg" alt="">
+            </div>
+            <div class="photo" style="left:340px; bottom:6%; width:340px; height:50%;">
+              <img src="photos/img-0108.jpg" alt="">
+            </div>
+          </div>
+        </div>
+        <div class="bay" style="width:640px">
+          <div class="bay-inner">
+            <div class="photo" style="left:40px; top:12%; width:540px; height:68%;">
+              <img src="photos/ac-2.jpg" alt="">
+            </div>
+          </div>
+        </div>
+
+        <div class="chapter closing">
+          <div class="meta">AUGUST 2026</div>
+          <h3>Which brings us to <em>August</em>.</h3>
+        </div>
+
+        <div class="bay" style="width:440px">
+          <div class="bay-inner">
+            <div class="photo" style="left:60px; bottom:6%; width:320px; height:72%;">
+              <img src="photos/save-the-date.jpg" alt="">
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <!-- /.story-track -->
+
+      <div class="story-progress">
+        <div class="rail">
+          <div class="fill" id="storyFill"></div>
+        </div>
+        <span class="scroll-arrow" aria-hidden="true">→ Scroll</span>
+      </div>
+    </section>
+
+    <!-- ─── SCHEDULE ──────────────────────────────────── -->
+    <section id="schedule" data-field="paper" data-nav="light">
+
+      <div class="schedule-header">
+        <h2>The<br>Weekend</h2>
+      </div>
+
+      <figure class="weekend-plate">
+        <div class="plate-img">
+          <img src="photos/mary-house-watercolor.jpg" alt="Watercolor illustration of the house, tent, and garden in Swan Lake by Mary." width="8217" height="7026" loading="lazy" decoding="async">
+        </div>
+        <figcaption>
+          <span class="credit">Illustration · Mary</span>
+          <span class="place">Swan Lake, NY · the house, the tent, the garden</span>
+        </figcaption>
+      </figure>
+
+      <div class="schedule">
+        <div class="schedule-days">
+
+          <div class="day-row">
+            <div class="date-stack">
+          Friday<div class="dom">14</div>Aug
+        </div>
+            <div>
+              <div class="title">Welcome drinks &amp; a pescatarian cookout</div>
+              <div class="desc">Welcome to the Catskills! Join us at The North Branch Inn for drinks and a pescatarian cookout served buffet style. Thank you to our parents, Amy, Phil, and Mary for hosting!</div>
+            </div>
+            <div class="when">
+          6:00 PM
+          <span class="place">The North Branch Inn</span>
+            </div>
+          </div>
+
+          <div class="day-row">
+            <div class="date-stack">
+          Saturday<div class="dom">15</div>Aug
+        </div>
+            <div>
+              <div class="title">We're getting married!</div>
+              <div class="desc">We will be hosting the wedding ceremony and reception in the back yard of our home. Shuttle and transportation details below.</div>
+              <div class="desc">
+                <b>Dress code:</b> the only thing that we strongly request is that you wear sensible shoes 🙂. The celebration will be in and around the 2 acres surrounding our house, and the land is not suitable for heels (think grass, hills, a meadow path). Other than that — feel free to dress however you'd like! We love a risky fashion choice (this is your permission to really go for it) but simple attire is welcome as well. There are no rules! Except the sturdy shoes of course.</div>
+              <div class="desc">
+                <b>Gifts:</b> We know August weekends are precious and we're so grateful that we can gather the people we love to celebrate with us. Beyond that, we request no gifts!!</div>
+            </div>
+            <div class="when">
+          4:00 PM
+          <span class="place">67 Major Marie Rossi Drive<br>Swan Lake, NY 12783</span>
+            </div>
+          </div>
+
+          <div class="day-row">
+            <div class="date-stack">
+          Sunday<div class="dom">16</div>Aug
+        </div>
+            <div>
+              <div class="title">We encourage everyone to explore the area before you have to depart</div>
+              <div class="desc">Take a dip, go for a hike, or check out Callicoon for a wonderful farmer's market, cafes, and shops.</div>
+              <div class="desc">For those of you who are sticking around for Sunday evening and want to see <b>Brandi Carlisle</b> play at Bethel Woods (the original site of Woodstock — 3 miles from our house), you can <a href="#" style="text-decoration:underline">purchase your lawn tickets here</a>! We will be there with picnic mats and binoculars.</div>
+            </div>
+            <div class="when">
+          Open all day
+          <span class="place">Sullivan County, NY</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── TRAVEL ────────────────────────────────────── -->
+    <section id="travel" data-field="paper" data-nav="light">
+      <div class="poster poster--solo">
+        <div class="copy">
+          <h2>Getting<br>
+            <em>there</em>.</h2>
+          <p class="lead">Having a car in the region is a necessity, but there is a bus from NYC to Monticello (20 min away from us) if you will be coming up from the city and meeting friends.</p>
+        </div>
+      </div>
+
+      <div class="travel-grid">
+        <div class="travel-card">
+          <h3>Drive yourself</h3>
+          <p>We'll provide parking near our house — details to come. Please carpool if you can; parking is limited.</p>
+          <ul>
+            <li>
+              <span>From NYC</span>
+              <span>~2 hrs</span></li>
+            <li>
+              <span>Closest town</span>
+              <span>Monticello</span></li>
+          </ul>
+        </div>
+        <div class="travel-card">
+          <h3>Saturday school bus</h3>
+          <p>We've arranged a shuttle to help transport guests to and from the celebration. It'll depart from The North Branch Inn around 3 PM and make planned stops at pre-approved Airbnbs. Return trips between 10 PM and 2 AM.</p>
+          <ul>
+            <li>
+              <span>Depart</span>
+              <span>~3:00 PM</span></li>
+            <li>
+              <span>Returns</span>
+              <span>10 PM – 2 AM</span></li>
+          </ul>
+        </div>
+        <div class="travel-card">
+          <h3>NYC → Monticello</h3>
+          <p>Shortline / Coach USA runs from Port Authority to Monticello, 20 minutes from the house. Good if you're meeting friends with a car at the other end.</p>
+          <ul>
+            <li>
+              <span>Ride time</span>
+              <span>~2.5 hrs</span></li>
+            <li>
+              <span>Frequency</span>
+              <span>Multiple / day</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── STAY ──────────────────────────────────────── -->
+    <section id="stay" data-field="paper" data-nav="light">
+      <div class="stay-wrap">
+        <div class="stay-hero">
+          <h2>Where<br>to <em>sleep</em>.</h2>
+          <p>We've reserved a room block at The North Branch Inn — the Friday welcome dinner is there, and the Saturday shuttle is guaranteed to stop. Book early.</p>
+        </div>
+        <div class="stay-list">
+          <div class="stay-item">
+            <h4>The North Branch Inn</h4>
+            <p>Check out their website here — it's a really charming place surrounded by a creek and gardens. It is owned and operated by the former owners of the beloved Brooklyn restaurant Le Fond. This is where we will have the welcome drinks and where the shuttle will be guaranteed to pickup and drop off on Saturday night. Book the <b>Anna &amp; Connor room block</b>.</p>
+          </div>
+          <div class="stay-item">
+            <h4>Airbnb in the area</h4>
+            <p>If you'd like to stay in an airbnb and utilize the shuttle, please reach out to us to confirm the shuttle will be able to stop at your location. (thank you!)</p>
+          </div>
+          <div class="stay-item">
+            <h4>Local inns &amp; B&amp;Bs</h4>
+            <p>If neither of these options feel quite right for you, there are a couple of other local inns and B&amp;Bs. Feel free to search around Bethel, NY to see what's available!</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── FAQ ──────────────────────────────────────── -->
+    <section id="faq" data-field="signal" data-nav="dark" style="rotate: 3deg; border-radius: var(--r); z-index: 1;">
+      <div class="faq-wrap">
+        <div>
+          <h2>A few<br>
+            <em>questions,</em><br>answered.</h2>
+        </div>
+        <div class="faq-list" id="faqList"></div>
+      </div>
+
+      <div class="todo-section">
+        <p class="meta">Things to do around town</p>
+        <div class="todo-grid">
+
+          <div class="todo-cat">
+            <span class="todo-cat-label">Eat &amp; Drink</span>
+            <ul class="todo-list">
+              <li>
+                <span class="todo-place">
+                  <a href="https://www.instagram.com/sullivansundries/" target="_blank" rel="noopener">Sullivan Sundries</a>
+                </span>
+                <span class="todo-desc">Great coffee, cheeses, wine</span>
+              </li>
+              <li>
+                <span class="todo-place">
+                  <a href="https://www.jeffersonvillebakeshop.com/" target="_blank" rel="noopener">Jeffersonville Bakeshop</a>
+                </span>
+                <span class="todo-desc">Local coffee + afternoon sweet treat, seating to work</span>
+              </li>
+              <li>
+                <span class="todo-place">Old Foundation</span>
+                <span class="todo-desc">Wood fire pizza and Italian fare</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="todo-cat">
+            <span class="todo-cat-label">Shop</span>
+            <ul class="todo-list">
+              <li>
+                <span class="todo-place">Shopping on Main St.</span>
+                <span class="todo-desc">Local antique and thrift stores</span>
+              </li>
+              <li>
+                <span class="todo-place">
+                  <a href="https://www.callicoonwinemerchant.com/" target="_blank" rel="noopener">Callicoon Wine Merchant</a>
+                </span>
+                <span class="todo-desc">Intimate spot, small bites, wine/beer</span>
+              </li>
+              <li>
+                <span class="todo-place">
+                  <a href="http://callicoonfarmersmarket.org/" target="_blank" rel="noopener">Sunday Farmers Market</a>
+                </span>
+                <span class="todo-desc">Local farms and food, 9am–2pm</span>
+              </li>
+              <li>
+                <span class="todo-place">
+                  <a href="https://www.seminaryhill.co" target="_blank" rel="noopener">Seminary Hill Cider</a>
+                </span>
+                <span class="todo-desc">Gorgeous view, great spot for lunch</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="todo-cat">
+            <span class="todo-cat-label">Do</span>
+            <ul class="todo-list">
+              <li>
+                <span class="todo-place">
+                  <a href="https://www.kenozahall.com" target="_blank" rel="noopener">Yoga at Kenoza Hall</a>
+                </span>
+                <span class="todo-desc">Check their schedule — yoga classes and bar</span>
+              </li>
+              <li>
+                <span class="todo-place">
+                  <a href="https://sullivancountyhiker.org/trails_tusten.shtml" target="_blank" rel="noopener">Tusten Mountain Trail</a>
+                </span>
+                <span class="todo-desc">Great hike with views over the Delaware River</span>
+              </li>
+              <li>
+                <span class="todo-place">
+                  <a href="https://dec.ny.gov/places/crystal-lake-wild-forest" target="_blank" rel="noopener">Crystal Lake</a>
+                </span>
+                <span class="todo-desc">Swimming</span>
+              </li>
+              <li>
+                <span class="todo-place">Skinner's Falls</span>
+                <span class="todo-desc">Tubing and swimming on the Delaware</span>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── RSVP ─────────────────────────────────────── -->
+    <section id="rsvp" data-field="blue" data-nav="dark">
+      <div class="rsvp-wrap">
+        <div class="rsvp-left">
+          <h2>Will you<br>
+            <em>join us?</em>
+          </h2>
+          <p>Your answer helps us plan the shuttle, seats, and the right amount of food. You can always change your mind — just email us.</p>
+          <p>Each invitation is for the people named on it. If you have questions, write to us.</p>
+          <div class="deadline">
+            <span>Please respond before</span>
+            <b>01 July 2026</b>
+          </div>
+        </div>
+
+        <div class="rsvp-card" id="rsvpCard">
+          <div class="rsvp-meta">
+            <span id="stepLabel">Step 01 · Attendance</span>
+            <span id="stepCount">01 / 03</span>
+          </div>
+          <div class="rsvp-progress" id="rsvpProgress"></div>
+
+          <!-- Step 1 — attendance -->
+          <div class="step is-active" data-step="1">
+            <h3>Will you be able to join us for the wedding?</h3>
+            <p class="sub">Choose one — you can always change your mind.</p>
+            <div class="big-choice">
+              <button type="button" data-attending="yes">
+                <span class="lbl">Yes —</span>
+                <span class="val">We'll be there!</span>
+              </button>
+              <button type="button" data-attending="no">
+                <span class="lbl">No —</span>
+                <span class="val">Sadly, I cannot attend</span>
+              </button>
+            </div>
+            <div class="step-actions">
+              <span></span>
+              <button type="button" class="btn next" data-go="next" disabled>Continue</button>
+            </div>
+          </div>
+
+          <!-- Step 2 — name, email, dietary, shuttle -->
+          <div class="step" data-step="2">
+            <h3>Tell us about you.</h3>
+            <p class="sub">Everyone on the invitation — we'll take the list from here.</p>
+            <div class="field-row">
+              <div class="field">
+                <label>Name(s)</label>
+                <input type="text" name="name" placeholder="Your &amp; guest">
+              </div>
+              <div class="field">
+                <label>Email</label>
+                <input type="email" name="email" placeholder="you@example.com">
+              </div>
+            </div>
+            <div class="field">
+              <label>Dietary restrictions and/or allergies</label>
+              <textarea name="dietary" rows="2" placeholder="Vegetarian, nut allergy, etc."></textarea>
+            </div>
+            <div class="field">
+              <label>Shuttle for the wedding day?</label>
+              <div class="big-choice">
+                <button type="button" data-shuttle="yes">
+                  <span class="lbl">Yes —</span>
+                  <span class="val">I'll book North Branch or a pre-approved Airbnb</span>
+                </button>
+                <button type="button" data-shuttle="no">
+                  <span class="lbl">No —</span>
+                  <span class="val">Driving on my own</span>
+                </button>
+              </div>
+              <p class="helper">The shuttle departs The North Branch Inn around 3 PM and makes planned stops at pre-approved Airbnbs along the way. We'll reach out directly to confirm your pickup.</p>
+            </div>
+            <div class="step-actions">
+              <button type="button" class="btn back" data-go="back">Back</button>
+              <button type="button" class="btn next" data-go="next">Continue</button>
+            </div>
+          </div>
+
+          <!-- Step 3 — Friday drinks -->
+          <div class="step" data-step="3">
+            <h3>Friday welcome drinks?</h3>
+            <p class="sub">Cookout &amp; drinks at The North Branch Inn, Friday the 14th at 6 PM.</p>
+            <div class="big-choice">
+              <button type="button" data-friday="yes">
+                <span class="lbl">Yes —</span>
+                <span class="val">We'll be there</span>
+              </button>
+              <button type="button" data-friday="no">
+                <span class="lbl">No —</span>
+                <span class="val">Just Saturday</span>
+              </button>
+            </div>
+            <div class="field" id="fridayNamesField" hidden style="margin-top:20px">
+              <label>Who's coming Friday?</label>
+              <input type="text" name="fridayNames" placeholder="Name(s) joining for Friday">
+            </div>
+            <div class="step-actions">
+              <button type="button" class="btn back" data-go="back">Back</button>
+              <button type="button" class="btn next" id="submitRsvp">Send RSVP</button>
+            </div>
+          </div>
+
+          <!-- Decline path -->
+          <div class="step" data-step="d">
+            <h3>We'll miss you.</h3>
+            <p class="sub">If you'd like, leave a note for Anna and Connor.</p>
+            <div class="field-row">
+              <div class="field">
+                <label>Name(s)</label>
+                <input type="text" name="declineName" placeholder="Your name">
+              </div>
+              <div class="field">
+                <label>Email</label>
+                <input type="email" name="declineEmail" placeholder="you@example.com">
+              </div>
+            </div>
+            <div class="field">
+              <label>A message (optional)</label>
+              <textarea name="declineMessage" rows="3" placeholder="Anything you'd like to say."></textarea>
+            </div>
+            <div class="step-actions">
+              <button type="button" class="btn back" data-go="back">Back</button>
+              <button type="button" class="btn next" id="submitDecline">Send regrets</button>
+            </div>
+          </div>
+
+          <!-- Confirmation -->
+          <div class="step" data-step="done">
+            <div class="confirm">
+              <span class="stamp" id="stampText">Received · 15.08.2026</span>
+              <h3 id="confirmTitle">Yay! We can't wait to <em>celebrate with you</em>.</h3>
+              <p id="confirmMsg">Your RSVP is in. Watch your inbox for shuttle and arrival details as we get closer to August.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── HOUSE / RENO ─────────────────────────────── -->
+    <section id="house" data-field="ink" data-nav="dark">
+      <div class="house-top">
+        <div class="house-photo">
+          <img src="photos/house-hero.jpg" alt="Our house in Swan Lake" loading="lazy" decoding="async">
+        </div>
+      </div>
+
+      <div class="house-copy">
+        <p>We've been working really hard to get it ready for you. We can't wait for you to come see it!</p>
+        <p>It's been a real team effort — thank you to everyone who has helped along the way.</p>
+      </div>
+
+      <div class="reno-header">
+        <p class="meta">Click through the reno →</p>
+        <div class="reno-arrows">
+          <button class="reno-arrow" id="renoPrev" aria-label="Previous">←</button>
+          <button class="reno-arrow" id="renoNext" aria-label="Next">→</button>
+        </div>
+      </div>
+
+      <div class="reno-viewport" id="renoViewport">
+        <div class="reno-track" id="renoTrack">
+          <div class="reno-slide"><img src="photos/reno-01.jpg" alt="" loading="lazy"></div>
+          <div class="reno-slide"><img src="photos/reno-02.jpg" alt="" loading="lazy"></div>
+          <div class="reno-slide"><img src="photos/reno-03.jpg" alt="" loading="lazy"></div>
+          <div class="reno-slide"><img src="photos/reno-04.jpg" alt="" loading="lazy"></div>
+          <div class="reno-slide"><img src="photos/reno-05.jpg" alt="" loading="lazy"></div>
+          <div class="reno-slide"><img src="photos/reno-06.jpg" alt="" loading="lazy"></div>
+          <div class="reno-slide"><img src="photos/reno-07.jpg" alt="" loading="lazy"></div>
+          <div class="reno-slide"><img src="photos/reno-08.jpg" alt="" loading="lazy"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── END ──────────────────────────────────────── -->
+    <section class="end" id="end" data-field="paper" data-nav="light">
+      <div class="mega">
+        <em>See</em> you<br>in Swan Lake.</div>
+    </section>
+
+    <script>
+      /* ── Nav ─────────────────────────────────────────────────────── */
+
+      const nav = document.getElementById('nav');
+      const navLinks = [...nav.querySelectorAll('a[data-to]')];
+
+      function onScroll() {
+        const y = window.scrollY;
+        nav
+          .classList
+          .toggle('is-hidden', y < 120);
+
+        const viewMid = y + window.innerHeight * 0.35;
+        let current = null;
+        document
+          .querySelectorAll('section[id]')
+          .forEach(s => {
+            if (viewMid >= s.offsetTop && viewMid < s.offsetTop + s.offsetHeight) 
+              current = s;
+            }
+          );
+        if (current) {
+          nav
+            .classList
+            .toggle('on-dark', current.dataset.nav === 'dark');
+          navLinks.forEach(a => a.classList.toggle('is-active', a.dataset.to === current.id));
+        }
+      }
+      window.addEventListener('scroll', onScroll, {passive: true});
+      onScroll();
+
+      navLinks.forEach(a => {
+        a.addEventListener('click', () => {
+          const el = document.getElementById(a.dataset.to);
+          if (el) 
+            window.scrollTo({
+              top: el.offsetTop - 30,
+              behavior: 'smooth'
+            });
+          }
+        );
+      });
+
+      /* ── FAQ ─────────────────────────────────────────────────────── */
+
+      const FAQS = [
+        {
+          q: 'Are kids welcome?',
+          a: 'Yes! It is a family affair, kids of all ages are welcome to join.'
+        }, {
+          q: 'What\'s the weather like?',
+          a: 'Mid-August in the Catskills: warm days (75–85°F), cool-ish evenings. Bring a light layer for after sundown, and something for your feet that can handle a grass path in the dark.'
+        }, {
+          q: 'What about gifts?',
+          a: 'We know August weekends are precious and we\'re so grateful that we can gather the people we love to celebrate with us. Beyond that, we request no gifts!!'
+        }, {
+          q: 'What\'s the dress code?',
+          a: 'The only thing we strongly request is sensible shoes 🙂 The celebration is in and around the 2 acres surrounding our house — think grass, hills, a meadow path — not suitable for heels. Beyond that, wear whatever you\'d like! We love a risky fashion choice (this is your permission to really go for it) but simple attire is equally welcome. There are no rules! Except the shoes.'
+        }
+      ];
+
+      const faqList = document.getElementById('faqList');
+      faqList.innerHTML = FAQS
+        .map((f, i) => `
+  <div class="faq-item">
+    <button class="q" aria-expanded="false">
+      <span class="idx">${String(i + 1).padStart(2, '0')}</span>
+      <span>${f.q}</span>
+      <span class="toggle" aria-hidden="true"></span>
+    </button>
+    <div class="a" role="region"><div><p>${f.a}</p></div></div>
+  </div>
+`)
+        .join('');
+
+      faqList
+        .querySelectorAll('.faq-item')
+        .forEach(item => {
+          const btn = item.querySelector('.q');
+          btn.addEventListener('click', () => {
+            const open = item
+              .classList
+              .toggle('is-open');
+            btn.setAttribute('aria-expanded', open);
+          });
+        });
+
+      /* ── RSVP wizard ─────────────────────────────────────────────── */
+
+      const card = document.getElementById('rsvpCard');
+      const progress = document.getElementById('rsvpProgress');
+      const stepLabel = document.getElementById('stepLabel');
+      const stepCount = document.getElementById('stepCount');
+
+      const FLOWS = {
+        accept: [
+          '1', '2', '3', 'done'
+        ],
+        decline: ['1', 'd', 'done']
+      };
+      const STEP_LABELS = {
+        '1': 'Attendance',
+        '2': 'You & shuttle',
+        '3': 'Friday drinks',
+        d: 'A note',
+        done: 'Received'
+      };
+
+      let attending = null;
+      let currentStep = '1';
+      const formData = {};
+
+      function activeFlow() {
+        return FLOWS[
+          attending === 'no'
+            ? 'decline'
+            : 'accept'
+        ];
+      }
+
+      function renderProgress() {
+        const flow = activeFlow();
+        const bars = flow.filter(s => s !== 'done');
+        const idx = bars.indexOf(currentStep);
+        progress.innerHTML = bars
+          .map(
+            (_, i) => `<span class="${i < idx
+            ? 'done'
+            : i === idx
+              ? 'active'
+              : ''}"></span>`)
+          .join('');
+        stepLabel.textContent = `Step ${String(Math.max(idx + 1, 1)).padStart(2, '0')} · ${STEP_LABELS[currentStep] || ''}`;
+        stepCount.textContent = `${String(idx + 1).padStart(2, '0')} / ${String(bars.length).padStart(2, '0')}`;
+      }
+
+      function showStep(s) {
+        currentStep = s;
+        card
+          .querySelectorAll('.step')
+          .forEach(el => el.classList.toggle('is-active', el.dataset.step === s));
+        renderProgress();
+      }
+
+      function collectStep(s) {
+        const step = card.querySelector(`.step[data-step="${s}"]`);
+        if (!step) return;
+        step.querySelectorAll('input, select, textarea').forEach(f => {
+          if (f.name) formData[f.name] = f.value.trim();
+        });
+      }
+
+      /* Attendance buttons */
+      card
+        .querySelectorAll('[data-attending]')
+        .forEach(btn => {
+          btn.addEventListener('click', () => {
+            attending = btn.dataset.attending;
+            card
+              .querySelectorAll('[data-attending]')
+              .forEach(b => b.classList.toggle('is-selected', b === btn));
+            card
+              .querySelector('.step[data-step="1"] .btn.next')
+              .disabled = false;
+          });
+        });
+
+      /* Shuttle buttons */
+      card
+        .querySelectorAll('[data-shuttle]')
+        .forEach(btn => {
+          btn.addEventListener('click', () => {
+            formData.shuttle = btn.dataset.shuttle === 'yes'
+              ? 'Yes — North Branch or pre-approved Airbnb'
+              : 'No — driving on my own';
+            card
+              .querySelectorAll('[data-shuttle]')
+              .forEach(b => b.classList.toggle('is-selected', b === btn));
+          });
+        });
+
+      /* Friday drinks buttons */
+      const fridayNamesField = document.getElementById('fridayNamesField');
+      card
+        .querySelectorAll('[data-friday]')
+        .forEach(btn => {
+          btn.addEventListener('click', () => {
+            formData.friday = btn.dataset.friday;
+            card
+              .querySelectorAll('[data-friday]')
+              .forEach(b => b.classList.toggle('is-selected', b === btn));
+            fridayNamesField.hidden = (formData.friday !== 'yes');
+          });
+        });
+
+      /* Step navigation (delegated) */
+      card.addEventListener('click', e => {
+        const btn = e
+          .target
+          .closest('[data-go]');
+        if (!btn) 
+          return;
+        collectStep(currentStep);
+        const flow = activeFlow();
+        const idx = flow.indexOf(currentStep);
+        if (btn.dataset.go === 'next') {
+          /* First step: branch on attending value */
+          if (currentStep === '1' && attending === 'no') {
+            showStep('d');
+            return;
+          }
+          showStep(flow[Math.min(idx + 1, flow.length - 1)]);
+        } else {
+          showStep(flow[Math.max(idx - 1, 0)]);
+        }
+      });
+
+      /* Finalize */
+      const SHEET_URL = 'https://script.google.com/macros/s/AKfycbwHH-dgp_3R5A5M6kPj7TYzEOFdI6dACOV4V-ZmO7kpGf26tPkOlqgyQow-rAEGEeqC/exec';
+
+      function finalize(accepted) {
+        collectStep(currentStep);
+
+        /* POST to Google Sheets — fire and forget (no-cors, optimistic) */
+        const payload = {
+          attending: attending === 'yes'
+            ? 'Yes'
+            : 'No',
+          name: formData.name || formData.declineName || '',
+          email: formData.email || formData.declineEmail || '',
+          dietary: formData.dietary || '',
+          shuttle: formData.shuttle || '',
+          friday: formData.friday === 'yes'
+            ? 'Yes'
+            : formData.friday === 'no'
+              ? 'No'
+              : '',
+          fridayNames: formData.fridayNames || '',
+          note: formData.declineMessage || ''
+        };
+        if (SHEET_URL !== 'YOUR_APPS_SCRIPT_DEPLOYMENT_URL') {
+          fetch(SHEET_URL, {
+            method: 'POST',
+            mode: 'no-cors',
+            headers: {
+              'Content-Type': 'text/plain'
+            },
+            body: JSON.stringify(payload)
+          }).catch(() => {});
+        }
+
+        const now = new Date();
+        const stamp = `${String(now.getDate()).padStart(2, '0')}.${String(now.getMonth() + 1).padStart(2, '0')}.${now.getFullYear()}`;
+        document
+          .getElementById('stampText')
+          .textContent = `Received · ${stamp}`;
+        if (accepted) {
+          document
+            .getElementById('confirmTitle')
+            .innerHTML = 'Yay! We can\'t wait to <em>celebrate with you</em>.';
+          document
+            .getElementById('confirmMsg')
+            .textContent = 'Your RSVP is in. Watch your inbox for shuttle and arrival details as we get closer to August.';
+        } else {
+          document
+            .getElementById('confirmTitle')
+            .innerHTML = 'Thank you for letting us <em>know</em>.';
+          document
+            .getElementById('confirmMsg')
+            .textContent = 'You will be missed. We\'ll be thinking of you — and hoping to celebrate together another time.';
+        }
+        showStep('done');
+      }
+      document
+        .getElementById('submitRsvp')
+        .addEventListener('click', () => finalize(true));
+      document
+        .getElementById('submitDecline')
+        .addEventListener('click', () => finalize(false));
+
+      renderProgress();
+
+      /* ── Story horizontal scroll ─────────────────────────────────── */
+
+      (function initStoryScroll() {
+        const track = document.getElementById('storyTrack');
+        const fill = document.getElementById('storyFill');
+        const section = document.getElementById('story');
+        if (!track || !fill || !section) 
+          return;
+        
+        /* ── Progress bar ─────────────────────────────────────────── */
+        function updateProgress() {
+          const max = track.scrollWidth - track.clientWidth;
+          fill.style.width = max > 0
+            ? ((track.scrollLeft / max) * 100).toFixed(2) + '%'
+            : '0%';
+        }
+        track.addEventListener('scroll', updateProgress, {passive: true});
+        window.addEventListener('resize', () => {
+          targetX = track.scrollLeft;
+          updateProgress();
+        });
+        updateProgress();
+
+        /* ── Lerp engine ──────────────────────────────────────────── */
+        let targetX = 0;
+        let rafId = null;
+
+        function maxX() {
+          return Math.max(0, track.scrollWidth - track.clientWidth);
+        }
+        function clamp(v) {
+          return Math.max(0, Math.min(maxX(), v));
+        }
+
+        function tick() {
+          const diff = targetX - track.scrollLeft;
+          if (Math.abs(diff) < 0.5) {
+            track.scrollLeft = targetX;
+            rafId = null;
+            return;
+          }
+          track.scrollLeft += diff * 0.1;
+          rafId = requestAnimationFrame(tick);
+        }
+
+        function drive(delta) {
+          targetX = clamp(targetX + delta);
+          if (!rafId) 
+            rafId = requestAnimationFrame(tick);
+          }
+        
+        /* ── Wheel ────────────────────────────────────────────────── */
+        const EDGE_SLOP = 8;
+
+        function storyInView() {
+          const rect = section.getBoundingClientRect();
+          return rect.top > -window.innerHeight * 0.15 && rect.bottom < window.innerHeight * 1.15;
+        }
+
+        window.addEventListener('wheel', e => {
+          if (!storyInView()) return;
+
+          const raw = Math.abs(e.deltaY) >= Math.abs(e.deltaX) ? e.deltaY : e.deltaX;
+          const delta = e.deltaMode === 1 ? raw * 20 : e.deltaMode === 2 ? raw * track.clientWidth : raw;
+
+          const atEnd = targetX >= maxX() - EDGE_SLOP;
+          const atStart = targetX <= EDGE_SLOP;
+          if (delta > 0 && atEnd) return;
+          if (delta < 0 && atStart) return;
+
+          e.preventDefault();
+          drive(delta);
+        }, {passive: false});
+
+        /* ── Keyboard ─────────────────────────────────────────────── */
+        window.addEventListener('keydown', e => {
+          if (e.key !== 'ArrowLeft' && e.key !== 'ArrowRight') return;
+          if (!storyInView()) return;
+          e.preventDefault();
+          drive(e.key === 'ArrowRight' ? 220 : -220);
+        });
+
+        /* ── Touch ────────────────────────────────────────────────── */
+        let tx = 0,
+          ty = 0,
+          horiz = null;
+        let lastTx = 0,
+          lastTime = 0,
+          vel = 0;
+
+        section.addEventListener('touchstart', e => {
+          tx = lastTx = e.touches[0].clientX;
+          ty = e.touches[0].clientY;
+          lastTime = Date.now();
+          vel = 0;
+          horiz = null;
+          targetX = track.scrollLeft;
+          if (rafId) {
+            cancelAnimationFrame(rafId);
+            rafId = null;
+          }
+        }, {passive: true});
+
+        section.addEventListener('touchmove', e => {
+          const dx = e.touches[0].clientX - tx;
+          const dy = e.touches[0].clientY - ty;
+          if (horiz === null)
+            horiz = Math.abs(dx) > Math.abs(dy);
+          if (!horiz) return;
+          e.preventDefault();
+          const now = Date.now();
+          vel = (e.touches[0].clientX - lastTx) / Math.max(1, now - lastTime);
+          lastTx = e.touches[0].clientX;
+          lastTime = now;
+          drive(-dx);
+          tx = e.touches[0].clientX;
+        }, {passive: false});
+
+        section.addEventListener('touchend', () => {
+          if (!horiz) return;
+          drive(-vel * 300);
+        }, {passive: true});
+
+      })();
+
+      /* ── Hero scroll fade-out ────────────────────────────────────── */
+      (function () {
+        const hero = document.getElementById('hero');
+        const content = hero && hero.querySelector('.hero-d');
+        if (!hero || !content) 
+          return;
+        function update() {
+          const progress = Math.min(window.scrollY / (hero.offsetHeight * 0.55), 1);
+          content.style.opacity = 1 - progress;
+        }
+        window.addEventListener('scroll', update, {passive: true});
+      })();
+
+      /* ── Illustration fade-in ────────────────────────────────────── */
+      document
+        .querySelectorAll('.weekend-plate .plate-img img')
+        .forEach(img => {
+          const reveal = () => img
+            .classList
+            .add('loaded');
+          img.complete
+            ? reveal()
+            : img.addEventListener('load', reveal);
+        });
+
+      /* ── Story fade-in ───────────────────────────────────────────── */
+      (function () {
+        const story = document.getElementById('story');
+        if (!story) 
+          return;
+        new IntersectionObserver(([entry], obs) => {
+          if (entry.isIntersecting) {
+            story
+              .classList
+              .add('is-visible');
+            obs.disconnect();
+          }
+        }, {threshold: 0.06}).observe(story);
+      })();
+
+      /* ── Reno carousel ───────────────────────────────────────────── */
+      (function () {
+        const track = document.getElementById('renoTrack');
+        const viewport = document.getElementById('renoViewport');
+        const prev = document.getElementById('renoPrev');
+        const next = document.getElementById('renoNext');
+        if (!track || !viewport || !prev || !next) 
+          return;
+        
+        let index = 0;
+
+        function visibleCount() {
+          const w = window.innerWidth;
+          if (w <= 860) 
+            return 1;
+          if (w <= 1100) 
+            return 2;
+          return 3;
+        }
+
+        function slideWidth() {
+          const slide = track.querySelector('.reno-slide');
+          if (!slide) 
+            return 0;
+          const gap = parseFloat(getComputedStyle(track).gap) || 0;
+          return slide
+            .getBoundingClientRect()
+            .width + gap;
+        }
+
+        function maxIndex() {
+          return Math.max(0, track.children.length - visibleCount());
+        }
+
+        function update() {
+          index = Math.max(0, Math.min(index, maxIndex()));
+          track.style.transform = `translateX(${ - index * slideWidth()}px)`;
+          prev.disabled = index === 0;
+          next.disabled = index >= maxIndex();
+        }
+
+        prev.addEventListener('click', () => {
+          index--;
+          update();
+        });
+        next.addEventListener('click', () => {
+          index++;
+          update();
+        });
+        window.addEventListener('resize', update);
+
+        /* Touch/drag — simple swipe */
+        let startX = 0,
+          dragging = false;
+        viewport.addEventListener('touchstart', e => {
+          startX = e
+            .touches[0]
+            .clientX;
+          dragging = true;
+        }, {passive: true});
+        viewport.addEventListener('touchend', e => {
+          if (!dragging) 
+            return;
+          dragging = false;
+          const dx = e
+            .changedTouches[0]
+            .clientX - startX;
+          if (Math.abs(dx) < 40) 
+            return;
+          if (dx < 0) 
+            index++;
+          else 
+            index--;
+          update();
+        }, {passive: true});
+
+        update();
+      })();
+    </script>
+  </body>
+</html>

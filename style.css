@@ -1,0 +1,301 @@
+/* ============================================================
+   Anna & Connor — 15.08.2026
+   main.js
+   ============================================================ */
+
+
+/* ── Nav ────────────────────────────────────────────────────
+   Hides on page load, appears after scrolling 120px.
+   Switches between light and dark mode based on the active
+   section's data-nav attribute.
+──────────────────────────────────────────────────────────── */
+
+const nav      = document.getElementById('nav');
+const navLinks = [...nav.querySelectorAll('a[data-to]')];
+
+function onScroll() {
+  const y = window.scrollY;
+
+  // Show / hide nav
+  nav.classList.toggle('is-hidden', y < 120);
+
+  // Determine which section is dominant in the viewport
+  const viewMid = y + window.innerHeight * 0.35;
+  let currentSection = null;
+
+  document.querySelectorAll('section').forEach(section => {
+    const top = section.offsetTop;
+    const bot = top + section.offsetHeight;
+    if (viewMid >= top && viewMid < bot) currentSection = section;
+  });
+
+  if (currentSection) {
+    const isDark = currentSection.dataset.nav === 'dark';
+    nav.classList.toggle('on-dark', isDark);
+
+    navLinks.forEach(a => {
+      a.classList.toggle('is-active', a.dataset.to === currentSection.id);
+    });
+  }
+}
+
+window.addEventListener('scroll', onScroll, { passive: true });
+onScroll(); // run once on load
+
+// Smooth-scroll nav links
+navLinks.forEach(a => {
+  a.addEventListener('click', () => {
+    const target = document.getElementById(a.dataset.to);
+    if (target) window.scrollTo({ top: target.offsetTop - 30, behavior: 'smooth' });
+  });
+});
+
+
+/* ── FAQ ────────────────────────────────────────────────────
+   Renders FAQ items from data and wires up accordion toggle.
+──────────────────────────────────────────────────────────── */
+
+const FAQ_DATA = [
+  {
+    q: "Can I bring a plus-one?",
+    a: "Your invitation tells you who's invited by name. If you have a serious partner we haven't met yet, write to us and we'll do our best."
+  },
+  {
+    q: "Kids welcome?",
+    a: "We adore the kids in our lives, but this one is mostly an adult party. If your invitation includes your kids, they're very welcome. Otherwise, consider it a date night."
+  },
+  {
+    q: "What's the weather like?",
+    a: "Mid-August in the Catskills: warm days (75–85°F), cool-ish evenings. Bring a light layer for after sundown, and something for your feet that can handle a grass path in the dark."
+  },
+  {
+    q: "What about gifts?",
+    a: "Your presence is genuinely the gift — August weekends are precious, and we're so grateful. Beyond that, please, no gifts."
+  },
+  {
+    q: "Where exactly is the wedding?",
+    a: "Our house in Swan Lake, NY — 67 Major Marie Rossi Drive, 12783. Sullivan County, in the western Catskills. About 2 hours from New York City, 3 miles from Bethel Woods."
+  },
+];
+
+const faqList = document.getElementById('faqList');
+
+faqList.innerHTML = FAQ_DATA.map((item, i) => `
+  <div class="faq-item">
+    <button class="q" aria-expanded="false">
+      <span class="idx">${String(i + 1).padStart(2, '0')}</span>
+      <span>${item.q}</span>
+      <span class="toggle" aria-hidden="true"></span>
+    </button>
+    <div class="a"><div><p>${item.a}</p></div></div>
+  </div>
+`).join('');
+
+faqList.querySelectorAll('.faq-item').forEach(item => {
+  const btn = item.querySelector('.q');
+  btn.addEventListener('click', () => {
+    const isOpen = item.classList.toggle('is-open');
+    btn.setAttribute('aria-expanded', isOpen);
+  });
+});
+
+
+/* ── RSVP wizard ────────────────────────────────────────────
+   Multi-step form with two paths:
+     Accept: steps 1 → 2 → 3 → done
+     Decline: steps 1 → d → done
+──────────────────────────────────────────────────────────── */
+
+const card        = document.getElementById('rsvpCard');
+const progressBar = document.getElementById('rsvpProgress');
+const stepLabel   = document.getElementById('stepLabel');
+const stepCount   = document.getElementById('stepCount');
+
+const STEP_FLOWS = {
+  accept:  ['1', '2', '3', 'done'],
+  decline: ['1', 'd', 'done'],
+};
+
+const STEP_LABELS = {
+  '1':    'Attendance',
+  '2':    'You & shuttle',
+  '3':    'Friday drinks',
+  'd':    'A note',
+  'done': 'Received',
+};
+
+let attending    = null;   // 'yes' | 'no'
+let currentStep  = '1';
+const formData   = {};
+
+function activeFlow() {
+  return STEP_FLOWS[attending === 'no' ? 'decline' : 'accept'];
+}
+
+function renderProgress() {
+  const flow      = activeFlow();
+  const navSteps  = flow.filter(s => s !== 'done');
+  const idx       = navSteps.indexOf(currentStep);
+
+  progressBar.innerHTML = navSteps
+    .map((_, i) => {
+      const cls = i < idx ? 'done' : i === idx ? 'active' : '';
+      return `<span class="${cls}"></span>`;
+    })
+    .join('');
+
+  const labelKey   = STEP_LABELS[currentStep] || '';
+  const stepNum    = String(Math.max(idx + 1, 1)).padStart(2, '0');
+  const totalSteps = String(navSteps.length).padStart(2, '0');
+
+  stepLabel.textContent = `Step ${stepNum} · ${labelKey}`;
+  stepCount.textContent = `${stepNum} / ${totalSteps}`;
+}
+
+function showStep(stepId) {
+  currentStep = stepId;
+  card.querySelectorAll('.step').forEach(el => {
+    el.classList.toggle('is-active', el.dataset.step === stepId);
+  });
+  renderProgress();
+}
+
+function collectInputs(stepId) {
+  const stepEl = card.querySelector(`.step[data-step="${stepId}"]`);
+  if (!stepEl) return;
+  stepEl.querySelectorAll('input, select, textarea').forEach(field => {
+    if (field.name) formData[field.name] = field.value.trim();
+  });
+}
+
+// ── Attendance choice (step 1)
+card.querySelectorAll('[data-attending]').forEach(btn => {
+  btn.addEventListener('click', () => {
+    attending = btn.dataset.attending;
+    card.querySelectorAll('[data-attending]').forEach(b => {
+      b.classList.toggle('is-selected', b === btn);
+    });
+    card.querySelector('.step[data-step="1"] .btn.next').disabled = false;
+  });
+});
+
+// ── Shuttle choice (step 2)
+card.querySelectorAll('[data-shuttle]').forEach(btn => {
+  btn.addEventListener('click', () => {
+    formData.shuttle = btn.dataset.shuttle === 'yes'
+      ? 'Yes — North Branch or pre-approved Airbnb'
+      : 'No — driving on my own';
+    card.querySelectorAll('[data-shuttle]').forEach(b => {
+      b.classList.toggle('is-selected', b === btn);
+    });
+  });
+});
+
+// ── Friday drinks choice (step 3)
+const fridayNamesField = document.getElementById('fridayNamesField');
+
+card.querySelectorAll('[data-friday]').forEach(btn => {
+  btn.addEventListener('click', () => {
+    formData.friday = btn.dataset.friday;
+    card.querySelectorAll('[data-friday]').forEach(b => {
+      b.classList.toggle('is-selected', b === btn);
+    });
+    fridayNamesField.hidden = (formData.friday !== 'yes');
+  });
+});
+
+// ── Step navigation (Back / Continue)
+card.addEventListener('click', e => {
+  const btn = e.target.closest('[data-go]');
+  if (!btn) return;
+
+  collectInputs(currentStep);
+  const flow = activeFlow();
+  const idx  = flow.indexOf(currentStep);
+
+  if (btn.dataset.go === 'next') {
+    // Shortcut to decline path
+    if (currentStep === '1' && attending === 'no') {
+      showStep('d');
+      return;
+    }
+    showStep(flow[Math.min(idx + 1, flow.length - 1)]);
+  } else {
+    showStep(flow[Math.max(idx - 1, 0)]);
+  }
+});
+
+// ── Final submission
+function finalize(accepted) {
+  collectInputs(currentStep);
+
+  const today  = new Date();
+  const dd     = String(today.getDate()).padStart(2, '0');
+  const mm     = String(today.getMonth() + 1).padStart(2, '0');
+  const yy     = today.getFullYear();
+
+  document.getElementById('stampText').textContent = `Received · ${dd}.${mm}.${yy}`;
+
+  if (accepted) {
+    document.getElementById('confirmTitle').innerHTML =
+      "Yay! We can't wait to <em>celebrate with you</em>.";
+    document.getElementById('confirmMsg').textContent =
+      "Your RSVP is in. Watch your inbox for shuttle and arrival details as we get closer to August.";
+  } else {
+    document.getElementById('confirmTitle').innerHTML =
+      "Thank you for letting us <em>know</em>.";
+    document.getElementById('confirmMsg').textContent =
+      "You will be missed. We'll be thinking of you — and hoping to celebrate together another time.";
+  }
+
+  showStep('done');
+}
+
+document.getElementById('submitRsvp').addEventListener('click',    () => finalize(true));
+document.getElementById('submitDecline').addEventListener('click', () => finalize(false));
+
+renderProgress(); // initial render
+
+
+/* ── Story — horizontal scroll ──────────────────────────────
+   Converts vertical wheel delta to horizontal scroll while
+   the story section fully fills the viewport.
+   Also drives the progress-bar fill.
+──────────────────────────────────────────────────────────── */
+
+(function initStoryScroll() {
+  const track   = document.getElementById('storyTrack');
+  const fillBar = document.getElementById('storyFill');
+  if (!track || !fillBar) return;
+
+  function updateFill() {
+    const max = track.scrollWidth - track.clientWidth;
+    const pct = max > 0 ? track.scrollLeft / max : 0;
+    fillBar.style.width = (pct * 100).toFixed(2) + '%';
+  }
+
+  track.addEventListener('scroll', updateFill, { passive: true });
+  window.addEventListener('resize', updateFill);
+  updateFill();
+
+  // Hijack vertical wheel → horizontal scroll when story is pinned
+  const storySection = document.getElementById('story');
+
+  window.addEventListener('wheel', e => {
+    if (!storySection) return;
+
+    const rect         = storySection.getBoundingClientRect();
+    const fullyInView  = rect.top <= 4 && rect.bottom >= window.innerHeight - 4;
+    if (!fullyInView) return;
+
+    const delta  = Math.abs(e.deltaY) > Math.abs(e.deltaX) ? e.deltaY : e.deltaX;
+    const atStart = track.scrollLeft <= 1;
+    const atEnd   = track.scrollLeft >= track.scrollWidth - track.clientWidth - 1;
+
+    if (delta > 0 && atEnd)   return; // allow page to scroll past
+    if (delta < 0 && atStart) return;
+
+    e.preventDefault();
+    track.scrollLeft += delta;
+  }, { passive: false });
+})();
