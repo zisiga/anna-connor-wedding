@@ -10,8 +10,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=Inter+Tight:ital,wght@0,300..700;1,300..700&display=swap" rel="stylesheet">
     <style>
 
-      /* ── PP Fragment (local) ─────────────────────────────────────── */
-
       @font-face {
         font-family: 'PP Fragment Glare';
         src: url("fonts/PPFragment-GlareLight.otf") format('opentype');
@@ -106,7 +104,6 @@
         --signal: #EB5520;
         --meadow: #CFEA8E;
 
-        /* Backward-compat aliases */
         --terra: var(--signal);
         --sage: var(--meadow);
         --yellow: var(--signal);
@@ -123,8 +120,8 @@
         --wt-serif-display: 420;
 
         --edge: 40px;
-        --r: 10px;
-        --r-lg: 16px;
+        --r: 5px;
+        --r-lg: 10px;
         --r-xl: 20px;
         --r-pill: 3rem;
         --nav-h: 52px;
@@ -133,7 +130,6 @@
       }
 
       /* ── Reset ───────────────────────────────────────────────────── */
-
       *,
       *::after,
       *::before {
@@ -180,8 +176,6 @@
       }
 
       /* ── Typography roles ────────────────────────────────────────── */
-
-      /* Headline serif */
       .day-row .date-stack .dom,
       .day-row .title,
       .faq-item button.q,
@@ -204,7 +198,6 @@
         font-feature-settings: 'ss01', 'liga', 'calt';
       }
 
-      /* Roman-only — no italicising em inside display heads */
       .amp,
       .faq-item button.q em,
       .faq-wrap h2 em,
@@ -220,7 +213,6 @@
         letter-spacing: inherit;
       }
 
-      /* Small-label UI */
       .big-choice button .lbl,
       .day-row .date-stack,
       .day-row .when,
@@ -239,7 +231,6 @@
         letter-spacing: 0.08em;
       }
 
-      /* Body copy */
       .day-row .desc,
       .faq-item .a p,
       .poster .copy p,
@@ -253,7 +244,6 @@
       }
 
       /* ── NAV ─────────────────────────────────────────────────────── */
-
       .nav {
         position: fixed;
         top: 0;
@@ -287,8 +277,11 @@
         margin-right: auto;
         font-weight: 800;
       }
-      .nav .mark b {
-        font-weight: 500;
+      .nav .mark .nav-names {
+        color: var(--meadow);
+      }
+      .nav.on-dark .mark .nav-names {
+        color: var(--meadow);
       }
       .nav ul {
         display: flex;
@@ -341,7 +334,6 @@
       }
 
       /* ── SECTION SHELL ───────────────────────────────────────────── */
-
       section {
         position: relative;
         min-height: 100vh;
@@ -350,7 +342,6 @@
         display: flex;
         flex-direction: column;
       }
-
       section[data-field="paper"] {
         color: var(--ink);
         background: var(--paper);
@@ -371,7 +362,6 @@
         background: var(--meadow);
         color: var(--ink);
       }
-      /* Legacy aliases */
       section[data-field="sage"] {
         background: var(--meadow);
         color: var(--ink);
@@ -422,7 +412,6 @@
         bottom: 24px;
         right: var(--edge);
       }
-
       .section-num {
         position: absolute;
         top: calc(var(--nav-h) + 24px);
@@ -445,10 +434,7 @@
         opacity: 0.5;
       }
 
-      /* ── HERO — Option D ─────────────────────────────────────────── */
-
-      /* Anna / & / Connor become direct grid items via display:contents on h1.
-   "are getting married" sits in the same row as Connor — zero guesswork. */
+      /* ── HERO ────────────────────────────────────────────────────── */
       .hero-d {
         flex: 1;
         display: grid;
@@ -458,7 +444,6 @@
       }
       .hero-d-names {
         display: contents;
-        /* inherited by children even through display:contents */
         font-family: var(--serif);
         font-weight: 600;
         font-size: clamp(90px, 16vw, 300px);
@@ -474,11 +459,14 @@
         grid-column: 1;
         grid-row: 3;
       }
+      .hero-d-names .name-anna,
+      .hero-d-names .name-connor {
+        color: var(--meadow);
+      }
       .hero-d-names .amp {
         font-size: 0.6em;
         font-weight: 800;
-        /* font-style: italic; */
-        color: var(--signal);
+        color: var(--meadow);
       }
       .hero-d-right {
         grid-column: 2;
@@ -523,8 +511,6 @@
         }
       }
 
-      /* ── HERO ────────────────────────────────────────────────────── */
-
       .hero {
         min-height: 100vh;
         min-height: 100dvh;
@@ -539,55 +525,6 @@
         z-index: 1;
       }
 
-      .hero-meta-grid {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        gap: 24px;
-        font-family: var(--sans);
-        font-weight: 800;
-        font-size: 11px;
-        letter-spacing: 0.08em;
-        text-transform: uppercase;
-      }
-      .hero-meta-grid > div > span:first-child {
-        display: block;
-        opacity: 0.5;
-        margin-bottom: 4px;
-      }
-      .hero-meta-grid > div:nth-child(2) {
-        text-align: center;
-      }
-      .hero-meta-grid > div:nth-child(3) {
-        text-align: right;
-      }
-
-      .hero-type {
-        flex: 1;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        margin: 40px 0;
-      }
-
-      .stacked-name {
-        font-family: var(--serif);
-        font-weight: 800;
-        font-size: clamp(90px, 22vw, 360px);
-        line-height: 0.82;
-        letter-spacing: -0.04em;
-        color: var(--paper);
-      }
-      .stacked-name .line {
-        display: block;
-        position: relative;
-      }
-      .stacked-name .amp {
-        font-style: normal;
-        color: var(--signal);
-        letter-spacing: -0.02em;
-      }
-
-      /* Full-bleed media slot */
       .hero-media {
         position: absolute;
         inset: 0;
@@ -608,7 +545,6 @@
         width: 100%;
         height: 100%;
       }
-      /* Legibility scrim */
       .hero-media::after {
         content: '';
         position: absolute;
@@ -617,22 +553,7 @@
         pointer-events: none;
       }
 
-      @media (max-width: 760px) {
-        .hero-meta-grid {
-          grid-template-columns: 1fr;
-          gap: 8px;
-        }
-        .hero-meta-grid > div:nth-child(2),
-        .hero-meta-grid > div:nth-child(3) {
-          text-align: left;
-        }
-        .stacked-name {
-          font-size: clamp(64px, 26vw, 200px);
-        }
-      }
-
-      /* ── STORY — horizontal exhibition ──────────────────────────── */
-
+      /* ── STORY ───────────────────────────────────────────────────── */
       #story {
         padding: 0;
         min-height: 100vh;
@@ -680,7 +601,6 @@
         height: 0;
       }
 
-      /* Bay (photo columns) */
       .bay {
         flex: 0 0 auto;
         position: relative;
@@ -707,7 +627,6 @@
         display: block;
       }
 
-      /* Chapter (text columns) */
       .chapter {
         flex: 0 0 auto;
         height: 100%;
@@ -746,7 +665,6 @@
         opacity: 0.88;
       }
 
-      /* Intro chapter */
       .chapter.intro {
         width: 580px;
         padding: calc(var(--nav-h) + 110px) 60px 130px 40px;
@@ -758,12 +676,16 @@
         font-family: var(--serif);
         font-weight: 800;
         font-size: clamp(48px, 5.2vw, 84px);
-        line-height: 0.94;
-        letter-spacing: -0.02em;
-        margin-bottom: 26px;
+        line-height: 1;
       }
       .chapter.intro h2 em {
         font-style: normal;
+      }
+      .chapter.intro .attribution {
+        font-family: var(--sans);
+        font-size: 20px;
+        opacity: 0.5;
+        margin-top: 14px;
       }
       .chapter.intro .lead {
         font-family: var(--serif);
@@ -801,7 +723,6 @@
         opacity: 0.6;
       }
 
-      /* Closing chapter */
       .chapter.closing p {
         font-family: var(--sans);
         font-size: 1rem;
@@ -809,7 +730,24 @@
         opacity: 0.78;
       }
 
-      /* Progress bar */
+      /* Photo captions in story */
+      .photo-caption {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        padding: 32px 12px 12px;
+        background: linear-gradient(transparent, rgba(0,0,0,0.55));
+        font-family: var(--sans);
+        font-size: 20px;
+        line-height: 1.4;
+        text-align: center;
+        color: var(--paper);
+        text-transform: none;
+        letter-spacing: 0;
+        opacity: 0.9;
+      }
+
       .story-progress {
         position: absolute;
         left: var(--edge);
@@ -873,7 +811,6 @@
       }
 
       /* ── WEEKEND PLATE ───────────────────────────────────────────── */
-
       .weekend-plate {
         margin: 0 calc(-1 * var(--edge)) 16px;
         position: relative;
@@ -909,9 +846,6 @@
         color: var(--ink);
         text-align: left;
       }
-      .weekend-plate figcaption .place {
-        display: none;
-      }
 
       @media (max-width: 860px) {
         .weekend-plate .plate-img {
@@ -923,7 +857,6 @@
       }
 
       /* ── SCHEDULE ────────────────────────────────────────────────── */
-
       .schedule-header h2 {
         font-family: var(--serif);
         font-weight: 800;
@@ -1026,7 +959,6 @@
       }
 
       /* ── TRAVEL ──────────────────────────────────────────────────── */
-
       .poster {
         display: grid;
         grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr);
@@ -1071,7 +1003,6 @@
         line-height: 1.2;
         margin-bottom: 28px;
       }
-      /* Solo — no photo, readable column width */
       .poster.poster--solo {
         display: block;
         max-width: 68ch;
@@ -1157,7 +1088,6 @@
       }
 
       /* ── STAY ────────────────────────────────────────────────────── */
-
       .stay-wrap {
         display: grid;
         grid-template-columns: minmax(320px, 1fr) minmax(0, 1.8fr);
@@ -1210,11 +1140,14 @@
         gap: 8px 16px;
         align-items: baseline;
       }
-      section[data-field="cream"] .stay-item {
-        border-color: rgba(0,0,0,0.18);
+      section[data-field="meadow"] .stay-item {
+        border-color: rgba(26,30,46,0.2);
       }
       .stay-item:first-child {
         border-top: 1px solid rgba(0,0,0,0.14);
+      }
+      section[data-field="meadow"] .stay-item:first-child {
+        border-top-color: rgba(26,30,46,0.2);
       }
       .stay-item h4 {
         font-family: var(--sans);
@@ -1236,6 +1169,10 @@
         opacity: 0.8;
         max-width: 60ch;
       }
+      .stay-item a {
+        text-decoration: underline;
+        opacity: 0.85;
+      }
 
       @media (max-width: 860px) {
         .stay-wrap {
@@ -1244,7 +1181,6 @@
       }
 
       /* ── FAQ ─────────────────────────────────────────────────────── */
-
       .faq-wrap {
         display: grid;
         grid-template-columns: minmax(320px, 1fr) minmax(0, 1.8fr);
@@ -1353,7 +1289,6 @@
       }
 
       /* ── THINGS TO DO ────────────────────────────────────────────── */
-
       .todo-section {
         margin-top: 64px;
         padding-top: 48px;
@@ -1362,18 +1297,15 @@
       .todo-section > .meta {
         margin-bottom: 32px;
       }
-
       .todo-grid {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         gap: 48px;
       }
-
       .todo-cat {
         display: flex;
         flex-direction: column;
       }
-
       .todo-cat-label {
         font-family: var(--sans);
         font-weight: 800;
@@ -1385,16 +1317,13 @@
         border-bottom: 1px solid rgba(255,255,255,0.2);
         margin-bottom: 0;
       }
-
       .todo-list {
         list-style: none;
       }
-
       .todo-list li {
         padding: 14px 0;
         border-bottom: 1px solid rgba(255,255,255,0.1);
       }
-
       .todo-place {
         display: block;
         font-family: var(--serif);
@@ -1404,7 +1333,6 @@
         letter-spacing: -0.01em;
         margin-bottom: 3px;
       }
-
       .todo-desc {
         display: block;
         font-family: var(--sans);
@@ -1431,7 +1359,6 @@
       }
 
       /* ── RSVP ────────────────────────────────────────────────────── */
-
       .rsvp-wrap {
         display: grid;
         grid-template-columns: minmax(320px, 1fr) minmax(0, 1.8fr);
@@ -1601,7 +1528,6 @@
         grid-template-columns: 1fr 1fr;
         gap: 16px;
       }
-
       .helper {
         margin-top: 10px;
         font-size: 13px;
@@ -1809,7 +1735,6 @@
       }
 
       /* ── HOUSE / RENO ────────────────────────────────────────────── */
-
       .house-top {
         display: grid;
         grid-template-columns: 1fr 1.6fr;
@@ -1817,11 +1742,9 @@
         align-items: end;
         margin-bottom: 64px;
       }
-
       .house-head .meta {
         margin-bottom: 20px;
       }
-
       .house-head h2 {
         font-family: var(--serif);
         font-weight: 800;
@@ -1829,7 +1752,6 @@
         line-height: 0.88;
         letter-spacing: -0.03em;
       }
-
       .house-photo {
         aspect-ratio: 4/3;
         overflow: hidden;
@@ -1932,7 +1854,6 @@
       }
 
       /* ── FOOTER ──────────────────────────────────────────────────── */
-
       .end {
         min-height: 60vh;
         padding: calc(var(--nav-h) + 60px) var(--edge) 40px;
@@ -1954,7 +1875,6 @@
       }
 
       /* ── Mobile tightening ───────────────────────────────────────── */
-
       @media (max-width: 860px) {
         :root {
           --edge: 20px;
@@ -1997,7 +1917,7 @@
           display: none;
         }
         #faq {
-          rotate: 0deg !important;
+          rotate: 0 !important;
           border-radius: 0 !important;
         }
       }
@@ -2020,7 +1940,8 @@
   <body>
 
     <nav class="nav is-hidden" id="nav">
-      <span class="mark">Anna <i style="font-family:var(--serif);font-style:italic;">&</i> Connor</span>
+      <span class="mark">
+        <span class="nav-names">Anna <i style="font-family:var(--serif);font-style:italic;">&</i> Connor</span></span>
       <ul>
         <li>
           <a data-to="schedule">Schedule</a>
@@ -2053,7 +1974,7 @@
           <span class="name-connor">&nbsp;&nbsp;Connor</span>
         </h1>
         <div class="hero-d-right">
-          <p class="getting-married">are getting<br>married.</p>
+          <p class="getting-married">are getting<br>married!</p>
         </div>
       </div>
     </section>
@@ -2063,23 +1984,17 @@
       <div class="story-track" id="storyTrack">
 
         <div class="chapter intro">
-          <h2>“And you may <em>ask yourself,</em>
-            <em>‘Well, how did</em>
-            <em>I get here?’”</em>
+          <h2>"And you may <em>ask yourself,</em>
+            <em>'Well, how did</em>
+            <em>I get here?'"</em>
           </h2>
+          <p class="attribution">— Talking Heads</p>
         </div>
 
         <div class="bay" style="width:540px">
           <div class="bay-inner">
-            <div class="photo" style="left:80px; bottom:6%; width:340px; height:78%;">
+            <div class="photo" style="left:80px; bottom:6%; width:450px; height:78%;">
               <img src="photos/film-01.jpg" alt="">
-            </div>
-          </div>
-        </div>
-        <div class="bay" style="width:620px">
-          <div class="bay-inner">
-            <div class="photo" style="left:40px; top:6%; width:520px; height:60%;">
-              <img src="photos/film-02.jpg" alt="">
             </div>
           </div>
         </div>
@@ -2087,44 +2002,50 @@
         <div class="chapter">
           <div class="meta">MAY 2016</div>
           <h3>
-            <em>We met.</em>
-          </h3>
+            <em>We met</em> a few weeks after Connor moved to NYC.</h3>
         </div>
 
         <div class="bay" style="width:740px">
           <div class="bay-inner">
-            <div class="photo" style="left:20px; bottom:2%; width:240px; height:58%;">
-              <img src="photos/ac.jpg" alt="">
-            </div>
-            <div class="photo" style="left:300px; top:8%; width:420px; height:52%;">
+            <div class="photo" style="left:100px; top:8%; width:520px; height:70%;">
               <img src="photos/img-0367.jpg" alt="">
+              <span class="photo-caption">One of our first dates was to walk around the city and take film photos, here's a photo Anna took of Connor on that day.</span>
             </div>
           </div>
         </div>
         <div class="bay" style="width:380px">
           <div class="bay-inner">
-            <div class="photo" style="left:60px; bottom:10%; width:260px; height:52%;">
+            <div class="photo" style="left:100px; bottom:10%; width:500px; height:52%;">
               <img src="photos/img-0522.jpg" alt="">
             </div>
           </div>
         </div>
 
-        <div class="chapter">
-          <div class="meta">2017 – 2021</div>
-          <h3>And then <em>we fell in love.</em>
-          </h3>
-        </div>
-
-        <div class="bay" style="width:700px">
+        <div class="bay" style="width:340px">
           <div class="bay-inner">
-            <div class="photo" style="left:40px; top:18%; width:560px; height:68%;">
-              <img src="photos/img-0863.jpg" alt="">
+            <div class="photo" style="left:40px; top:12%; width:600px; height:45%;">
+              <video autoplay muted loop playsinline style="width:100%; height:100%; object-fit:cover;">
+                <source src="photos/about-us-loop.mp4" type="video/mp4">
+              </video>
             </div>
           </div>
         </div>
-        <div class="bay" style="width:660px">
+
+        <div class="chapter">
+          <h3>A few adventures later and we <em>fell in love.</em>
+          </h3>
+        </div>
+
+        <div class="bay" style="width:300px">
           <div class="bay-inner">
-            <div class="photo" style="left:20px; top:2%; width:300px; height:40%;">
+            <div class="photo" style="left:0px; top:60%; width:400px; height:30%;">
+              <img src="photos/ac.jpg" alt="">
+            </div>
+          </div>
+        </div>
+        <div class="bay" style="width:700px">
+          <div class="bay-inner">
+            <div class="photo" style="left:10px; top:2%; width:550px; height:40%;">
               <img src="photos/img-0065.jpg" alt="">
             </div>
             <div class="photo" style="left:310px; bottom:4%; width:320px; height:62%;">
@@ -2134,7 +2055,6 @@
         </div>
 
         <div class="chapter">
-          <div class="meta">SUMMER 2022</div>
           <h3>
             <em>Over and over</em> again.</h3>
         </div>
@@ -2146,20 +2066,35 @@
             </div>
           </div>
         </div>
-        <div class="bay" style="width:720px">
+        <div class="bay" style="width:700px">
           <div class="bay-inner">
             <div class="photo" style="left:40px; top:4%; width:260px; height:46%;">
               <img src="photos/dance.jpg" alt="">
             </div>
-            <div class="photo" style="left:340px; bottom:6%; width:340px; height:50%;">
+
+            <div class="photo" style="left:250px; top:40%; width:500px; height:45%; position:relative;">
               <img src="photos/img-0108.jpg" alt="">
             </div>
           </div>
         </div>
+
+        <div class="bay" style="width:720px">
+          <div class="bay-inner">
+            <div class="photo" style="left:60px; top:60%; width:360px; height:30%;">
+              <img src="photos/engagement-02.jpg" alt="">
+            </div>
+
+            <div class="photo" style="left:340px; bottom:2%; width:340px; height:70%; position:relative;">
+              <img src="photos/engagement-01.jpg" alt="">
+            </div>
+          </div>
+        </div>
+
         <div class="bay" style="width:640px">
           <div class="bay-inner">
             <div class="photo" style="left:40px; top:12%; width:540px; height:68%;">
               <img src="photos/ac-2.jpg" alt="">
+              <span class="photo-caption">the aftermath of the evening we decided to get married</span>
             </div>
           </div>
         </div>
@@ -2197,11 +2132,10 @@
 
       <figure class="weekend-plate">
         <div class="plate-img">
-          <img src="photos/mary-house-watercolor.jpg" alt="Watercolor illustration of the house, tent, and garden in Swan Lake by Mary." width="8217" height="7026" loading="lazy" decoding="async">
+          <img src="photos/mary-house-watercolor.jpg" alt="Watercolor illustration of the house, tent, and garden in Swan Lake by Mary Citarella." width="8217" height="7026" loading="lazy" decoding="async">
         </div>
         <figcaption>
-          <span class="credit">Illustration · Mary</span>
-          <span class="place">Swan Lake, NY · the house, the tent, the garden</span>
+          <span class="credit">Watercolor by Mary Citarella</span>
         </figcaption>
       </figure>
 
@@ -2210,219 +2144,43 @@
 
           <div class="day-row">
             <div class="date-stack">
-          Friday<div class="dom">14</div>Aug
-        </div>
+              Friday<div class="dom">14</div>Aug
+            </div>
             <div>
               <div class="title">Welcome drinks &amp; a pescatarian cookout</div>
-              <div class="desc">Welcome to the Catskills! Join us at The North Branch Inn for drinks and a pescatarian cookout served buffet style. Thank you to our parents, Amy, Phil, and Mary for hosting!</div>
+              <div class="desc">Welcome to the Catskills! Join us at <a href="https://www.northbranchinn.com/our-restaurant" style="text-decoration:underline">The North Branch Inn</a> for drinks and a pescatarian cookout served buffet style. Thank you to our parents, Amy, Phil, and Mary for hosting!</div>
             </div>
             <div class="when">
-          6:00 PM
-          <span class="place">The North Branch Inn</span>
+              6:00 PM
+              <span class="place">The North Branch Inn</span>
             </div>
           </div>
 
           <div class="day-row">
             <div class="date-stack">
-          Saturday<div class="dom">15</div>Aug
-        </div>
+              Saturday<div class="dom">15</div>Aug
+            </div>
             <div>
               <div class="title">We're getting married!</div>
-              <div class="desc">We will be hosting the wedding ceremony and reception in the back yard of our home. Shuttle and transportation details below.</div>
+              <div class="desc">We will be hosting the wedding ceremony and reception in the back yard of our home. Information on the shuttle and transportation provided below.</div>
               <div class="desc">
                 <b>Dress code:</b> the only thing that we strongly request is that you wear sensible shoes 🙂. The celebration will be in and around the 2 acres surrounding our house, and the land is not suitable for heels (think grass, hills, a meadow path). Other than that — feel free to dress however you'd like! We love a risky fashion choice (this is your permission to really go for it) but simple attire is welcome as well. There are no rules! Except the sturdy shoes of course.</div>
-              <div class="desc">
-                <b>Gifts:</b> We know August weekends are precious and we're so grateful that we can gather the people we love to celebrate with us. Beyond that, we request no gifts!!</div>
             </div>
             <div class="when">
-          4:00 PM
-          <span class="place">67 Major Marie Rossi Drive<br>Swan Lake, NY 12783</span>
+              4:00 PM
+              <span class="place">67 Major Marie Rossi Drive<br>Swan Lake, NY 12783</span>
             </div>
           </div>
 
           <div class="day-row">
             <div class="date-stack">
-          Sunday<div class="dom">16</div>Aug
-        </div>
+              Sunday<div class="dom">16</div>Aug
+            </div>
             <div>
               <div class="title">We encourage everyone to explore the area before you have to depart</div>
               <div class="desc">Take a dip, go for a hike, or check out Callicoon for a wonderful farmer's market, cafes, and shops.</div>
-              <div class="desc">For those of you who are sticking around for Sunday evening and want to see <b>Brandi Carlisle</b> play at Bethel Woods (the original site of Woodstock — 3 miles from our house), you can <a href="#" style="text-decoration:underline">purchase your lawn tickets here</a>! We will be there with picnic mats and binoculars.</div>
+              <div class="desc">For those of you who are sticking around for Sunday evening and want to see <b>Brandi Carlile</b> play at Bethel Woods (the original site of Woodstock — 3 miles from our house), you can <a href="https://www.ticketmaster.com/event/0000646BF0C24040?brand=bethel&camefrom=CFC_BETHELWOODS&_ga=2.252583306.2032896413.1775424231-40911792.1775424231" style="text-decoration:underline">purchase your lawn tickets here</a>! We will be there with picnic mats and binoculars.</div>
             </div>
-            <div class="when">
-          Open all day
-          <span class="place">Sullivan County, NY</span>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- ─── TRAVEL ────────────────────────────────────── -->
-    <section id="travel" data-field="paper" data-nav="light">
-      <div class="poster poster--solo">
-        <div class="copy">
-          <h2>Getting<br>
-            <em>there</em>.</h2>
-          <p class="lead">Having a car in the region is a necessity, but there is a bus from NYC to Monticello (20 min away from us) if you will be coming up from the city and meeting friends.</p>
-        </div>
-      </div>
-
-      <div class="travel-grid">
-        <div class="travel-card">
-          <h3>Drive yourself</h3>
-          <p>We'll provide parking near our house — details to come. Please carpool if you can; parking is limited.</p>
-          <ul>
-            <li>
-              <span>From NYC</span>
-              <span>~2 hrs</span></li>
-            <li>
-              <span>Closest town</span>
-              <span>Monticello</span></li>
-          </ul>
-        </div>
-        <div class="travel-card">
-          <h3>Saturday school bus</h3>
-          <p>We've arranged a shuttle to help transport guests to and from the celebration. It'll depart from The North Branch Inn around 3 PM and make planned stops at pre-approved Airbnbs. Return trips between 10 PM and 2 AM.</p>
-          <ul>
-            <li>
-              <span>Depart</span>
-              <span>~3:00 PM</span></li>
-            <li>
-              <span>Returns</span>
-              <span>10 PM – 2 AM</span></li>
-          </ul>
-        </div>
-        <div class="travel-card">
-          <h3>NYC → Monticello</h3>
-          <p>Shortline / Coach USA runs from Port Authority to Monticello, 20 minutes from the house. Good if you're meeting friends with a car at the other end.</p>
-          <ul>
-            <li>
-              <span>Ride time</span>
-              <span>~2.5 hrs</span></li>
-            <li>
-              <span>Frequency</span>
-              <span>Multiple / day</span></li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <!-- ─── STAY ──────────────────────────────────────── -->
-    <section id="stay" data-field="paper" data-nav="light">
-      <div class="stay-wrap">
-        <div class="stay-hero">
-          <h2>Where<br>to <em>sleep</em>.</h2>
-          <p>We've reserved a room block at The North Branch Inn — the Friday welcome dinner is there, and the Saturday shuttle is guaranteed to stop. Book early.</p>
-        </div>
-        <div class="stay-list">
-          <div class="stay-item">
-            <h4>The North Branch Inn</h4>
-            <p>Check out their website here — it's a really charming place surrounded by a creek and gardens. It is owned and operated by the former owners of the beloved Brooklyn restaurant Le Fond. This is where we will have the welcome drinks and where the shuttle will be guaranteed to pickup and drop off on Saturday night. Book the <b>Anna &amp; Connor room block</b>.</p>
-          </div>
-          <div class="stay-item">
-            <h4>Airbnb in the area</h4>
-            <p>If you'd like to stay in an airbnb and utilize the shuttle, please reach out to us to confirm the shuttle will be able to stop at your location. (thank you!)</p>
-          </div>
-          <div class="stay-item">
-            <h4>Local inns &amp; B&amp;Bs</h4>
-            <p>If neither of these options feel quite right for you, there are a couple of other local inns and B&amp;Bs. Feel free to search around Bethel, NY to see what's available!</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ─── FAQ ──────────────────────────────────────── -->
-    <section id="faq" data-field="signal" data-nav="dark" style="rotate: 3deg; border-radius: var(--r); z-index: 1;">
-      <div class="faq-wrap">
-        <div>
-          <h2>A few<br>
-            <em>questions,</em><br>answered.</h2>
-        </div>
-        <div class="faq-list" id="faqList"></div>
-      </div>
-
-      <div class="todo-section">
-        <p class="meta">Things to do around town</p>
-        <div class="todo-grid">
-
-          <div class="todo-cat">
-            <span class="todo-cat-label">Eat &amp; Drink</span>
-            <ul class="todo-list">
-              <li>
-                <span class="todo-place">
-                  <a href="https://www.instagram.com/sullivansundries/" target="_blank" rel="noopener">Sullivan Sundries</a>
-                </span>
-                <span class="todo-desc">Great coffee, cheeses, wine</span>
-              </li>
-              <li>
-                <span class="todo-place">
-                  <a href="https://www.jeffersonvillebakeshop.com/" target="_blank" rel="noopener">Jeffersonville Bakeshop</a>
-                </span>
-                <span class="todo-desc">Local coffee + afternoon sweet treat, seating to work</span>
-              </li>
-              <li>
-                <span class="todo-place">Old Foundation</span>
-                <span class="todo-desc">Wood fire pizza and Italian fare</span>
-              </li>
-            </ul>
-          </div>
-
-          <div class="todo-cat">
-            <span class="todo-cat-label">Shop</span>
-            <ul class="todo-list">
-              <li>
-                <span class="todo-place">Shopping on Main St.</span>
-                <span class="todo-desc">Local antique and thrift stores</span>
-              </li>
-              <li>
-                <span class="todo-place">
-                  <a href="https://www.callicoonwinemerchant.com/" target="_blank" rel="noopener">Callicoon Wine Merchant</a>
-                </span>
-                <span class="todo-desc">Intimate spot, small bites, wine/beer</span>
-              </li>
-              <li>
-                <span class="todo-place">
-                  <a href="http://callicoonfarmersmarket.org/" target="_blank" rel="noopener">Sunday Farmers Market</a>
-                </span>
-                <span class="todo-desc">Local farms and food, 9am–2pm</span>
-              </li>
-              <li>
-                <span class="todo-place">
-                  <a href="https://www.seminaryhill.co" target="_blank" rel="noopener">Seminary Hill Cider</a>
-                </span>
-                <span class="todo-desc">Gorgeous view, great spot for lunch</span>
-              </li>
-            </ul>
-          </div>
-
-          <div class="todo-cat">
-            <span class="todo-cat-label">Do</span>
-            <ul class="todo-list">
-              <li>
-                <span class="todo-place">
-                  <a href="https://www.kenozahall.com" target="_blank" rel="noopener">Yoga at Kenoza Hall</a>
-                </span>
-                <span class="todo-desc">Check their schedule — yoga classes and bar</span>
-              </li>
-              <li>
-                <span class="todo-place">
-                  <a href="https://sullivancountyhiker.org/trails_tusten.shtml" target="_blank" rel="noopener">Tusten Mountain Trail</a>
-                </span>
-                <span class="todo-desc">Great hike with views over the Delaware River</span>
-              </li>
-              <li>
-                <span class="todo-place">
-                  <a href="https://dec.ny.gov/places/crystal-lake-wild-forest" target="_blank" rel="noopener">Crystal Lake</a>
-                </span>
-                <span class="todo-desc">Swimming</span>
-              </li>
-              <li>
-                <span class="todo-place">Skinner's Falls</span>
-                <span class="todo-desc">Tubing and swimming on the Delaware</span>
-              </li>
-            </ul>
           </div>
 
         </div>
@@ -2436,11 +2194,11 @@
           <h2>Will you<br>
             <em>join us?</em>
           </h2>
-          <p>Your answer helps us plan the shuttle, seats, and the right amount of food. You can always change your mind — just email us.</p>
+          <p>Your answer helps us plan the shuttle, seats, and the right amount of food.</p>
           <p>Each invitation is for the people named on it. If you have questions, write to us.</p>
           <div class="deadline">
-            <span>Please respond before</span>
-            <b>01 July 2026</b>
+            <span>Please RSVP by</span>
+            <b>June 15th, 2026</b>
           </div>
         </div>
 
@@ -2454,7 +2212,7 @@
           <!-- Step 1 — attendance -->
           <div class="step is-active" data-step="1">
             <h3>Will you be able to join us for the wedding?</h3>
-            <p class="sub">Choose one — you can always change your mind.</p>
+            <p class="sub">Please fill out for everyone on the invitation.</p>
             <div class="big-choice">
               <button type="button" data-attending="yes">
                 <span class="lbl">Yes —</span>
@@ -2474,11 +2232,11 @@
           <!-- Step 2 — name, email, dietary, shuttle -->
           <div class="step" data-step="2">
             <h3>Tell us about you.</h3>
-            <p class="sub">Everyone on the invitation — we'll take the list from here.</p>
+            <p class="sub">Please fill out for everyone on the invitation.</p>
             <div class="field-row">
               <div class="field">
                 <label>Name(s)</label>
-                <input type="text" name="name" placeholder="Your &amp; guest">
+                <input type="text" name="name" placeholder="You &amp; guest">
               </div>
               <div class="field">
                 <label>Email</label>
@@ -2501,7 +2259,7 @@
                   <span class="val">Driving on my own</span>
                 </button>
               </div>
-              <p class="helper">The shuttle departs The North Branch Inn around 3 PM and makes planned stops at pre-approved Airbnbs along the way. We'll reach out directly to confirm your pickup.</p>
+              <p class="helper">The shuttle will first depart from the North Branch Inn around 3 PM and make some planned stops along the way at guests' pre-approved Airbnbs. To ensure your transport, we will reach out to you directly :)</p>
             </div>
             <div class="step-actions">
               <button type="button" class="btn back" data-go="back">Back</button>
@@ -2511,7 +2269,7 @@
 
           <!-- Step 3 — Friday drinks -->
           <div class="step" data-step="3">
-            <h3>Friday welcome drinks?</h3>
+            <h3>Will you be able to join for Friday welcome drinks?</h3>
             <p class="sub">Cookout &amp; drinks at The North Branch Inn, Friday the 14th at 6 PM.</p>
             <div class="big-choice">
               <button type="button" data-friday="yes">
@@ -2569,17 +2327,195 @@
       </div>
     </section>
 
+    <!-- ─── TRAVEL ────────────────────────────────────── -->
+    <section id="travel" data-field="paper" data-nav="light">
+      <div class="poster poster--solo">
+        <div class="copy">
+          <h2>Getting<br>
+            <em>there</em>.</h2>
+          <p class="lead">Having a car in the region is a necessity, but there is a <a href="https://www.coachusa.com/shortline?gad_source=1&gad_campaignid=9598860932&gbraid=0AAAAACdkoX8-0tcsAgVgpzKfAz8c2hpP4&gclid=CjwKCAjwnN3OBhA8EiwAfpTYekJclto3--VK7Rcr8MbUxO2_rHqKSIx76i5EMFG_THo-fL5V3EP3VBoCDPUQAvD_BwE" style="text-decoration:underline">bus from NYC to Monticello</a> (20 min away from us) if you will be coming up from the city and meeting friends.</p>
+        </div>
+      </div>
+
+      <div class="travel-grid">
+        <div class="travel-card">
+          <h3>Drive yourself</h3>
+          <p>We'll provide parking near our house — details to come. Please carpool if you can; parking is limited.</p>
+          <ul>
+            <li>
+              <span>From NYC</span>
+              <span>~2 hrs</span></li>
+            <li>
+              <span>Closest town</span>
+              <span>Monticello</span></li>
+          </ul>
+        </div>
+        <div class="travel-card">
+          <h3>Saturday school bus</h3>
+          <p>We've arranged a large school bus shuttle to transport guests to and from the celebration. It'll make two trips, departing first from The North Branch Inn around 3 PM, with planned stops at pre-approved Airbnbs along the way. If you'd like to take advantage of the shuttle and are planning to stay in a rented house, please reach out so we can help coordinate. Return trips between 10 PM and 2 AM.</p>
+          <ul>
+            <li>
+              <span>Depart</span>
+              <span>~3:00 PM</span></li>
+            <li>
+              <span>Returns</span>
+              <span>10 PM – 2 AM</span></li>
+          </ul>
+        </div>
+        <div class="travel-card">
+          <h3>NYC → Monticello</h3>
+          <p>Shortline / Coach USA runs from Port Authority to Monticello, 20 minutes from the house. Good if you're meeting friends with a car at the other end.</p>
+          <ul>
+            <li>
+              <span>Ride time</span>
+              <span>~2.5 hrs</span></li>
+            <li>
+              <span>Frequency</span>
+              <span>Multiple / day</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── STAY ──────────────────────────────────────── -->
+    <section id="stay" data-field="meadow" data-nav="light">
+      <div class="stay-wrap">
+        <div class="stay-hero">
+          <h2>Where<br>to <em>sleep</em>.</h2>
+          <p>We've reserved a room block at The North Branch Inn — the Friday welcome dinner is there, and the Saturday shuttle is guaranteed to stop. Book early.</p>
+        </div>
+        <div class="stay-list">
+          <div class="stay-item">
+            <h4>The North Branch Inn</h4>
+            <p>If you would like to book a room at The North Branch Inn, you can use <a href="https://secure.webrez.com/hotel/3784/?package_id=346364&date_from=20260814&date_to=20260816">this link to book our room block</a>. Check out their <a href="https://www.northbranchinn.com/rooms">website here</a> — it's a really charming place surrounded by a creek and gardens. It is owned and operated by the former owners of the beloved Brooklyn restaurant Le Fond. This is where we will have the welcome drinks and where the shuttle will be guaranteed to pickup and drop off on Saturday night.</p>
+          </div>
+          <div class="stay-item">
+            <h4>Airbnb in the area</h4>
+            <p>If you'd like to stay in an Airbnb and utilize the shuttle, please reach out to us to confirm the shuttle will be able to stop at your location. (thank you!)</p>
+          </div>
+          <div class="stay-item">
+            <h4>Local inns &amp; B&amp;Bs</h4>
+            <p>If neither of these options feel quite right for you, there are a couple of other local inns and B&amp;Bs. Feel free to search around Bethel, NY to see what's available!</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── FAQ ──────────────────────────────────────── -->
+    <section id="faq" data-field="signal" data-nav="dark" style="border-radius: var(--r); z-index: 1;">
+      <div class="faq-wrap">
+        <div>
+          <h2>A few<br>
+            <em>questions,</em><br>answered.</h2>
+        </div>
+        <div class="faq-list" id="faqList"></div>
+      </div>
+
+      <div class="todo-section">
+        <p class="meta">Things to do around town</p>
+        <div class="todo-grid">
+
+          <div class="todo-cat">
+            <span class="todo-cat-label">Eat &amp; Drink</span>
+            <ul class="todo-list">
+              <li>
+                <span class="todo-place">
+                  <a href="https://www.jeffersonvillebakeshop.com/" target="_blank" rel="noopener">Jeffersonville Bakeshop</a>
+                </span>
+                <span class="todo-desc">Local coffee + afternoon sweet treat, seating to work</span>
+              </li>
+              <li>
+                <span class="todo-place">Old Foundation</span>
+                <span class="todo-desc">Wood fire pizza and Italian fare</span>
+              </li>
+              <li>
+                <span class="todo-place">
+                  <a href="https://www.callicoonwinemerchant.com/" target="_blank" rel="noopener">Callicoon Wine Merchant</a>
+                </span>
+                <span class="todo-desc">Intimate spot, small bites, wine/beer</span>
+              </li>
+              <li>
+                <span class="todo-place">
+                  <a href="https://www.seminaryhill.co" target="_blank" rel="noopener">Seminary Hill Cider</a>
+                </span>
+                <span class="todo-desc">Gorgeous view, great spot for lunch</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="todo-cat">
+            <span class="todo-cat-label">Shop</span>
+            <ul class="todo-list">
+              <li>
+                <span class="todo-place">
+                  <a href="https://www.instagram.com/sullivansundries/" target="_blank" rel="noopener">Sullivan Sundries</a>
+                </span>
+                <span class="todo-desc">Great coffee, cheeses, wine</span>
+              </li>
+              <li>
+                <span class="todo-place">Shopping on Main St.</span>
+                <span class="todo-desc">Local antique and thrift stores in Callicoon or Jeffersonville</span>
+              </li>
+              <li>
+                <span class="todo-place">
+                  <a href="http://callicoonfarmersmarket.org/" target="_blank" rel="noopener">Sunday Farmers Market</a>
+                </span>
+                <span class="todo-desc">Local farms and food, 9am–2pm</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="todo-cat">
+            <span class="todo-cat-label">Do</span>
+            <ul class="todo-list">
+              <li>
+                <span class="todo-place">
+                  <a href="https://www.kenozahall.com" target="_blank" rel="noopener">Yoga at Kenoza Hall</a>
+                </span>
+                <span class="todo-desc">Check their schedule — yoga classes and bar</span>
+              </li>
+              <li>
+                <span class="todo-place">
+                  <a href="https://sullivancountyhiker.org/trails_tusten.shtml" target="_blank" rel="noopener">Tusten Mountain Trail</a>
+                </span>
+                <span class="todo-desc">Great hike with views over the Delaware River</span>
+              </li>
+              <li>
+                <span class="todo-place">
+                  <a href="https://dec.ny.gov/places/crystal-lake-wild-forest" target="_blank" rel="noopener">Crystal Lake</a>
+                </span>
+                <span class="todo-desc">Swimming</span>
+              </li>
+              <li>
+                <span class="todo-place">Skinner's Falls</span>
+                <span class="todo-desc">Tubing and swimming on the Delaware</span>
+              </li>
+              <li>
+                <span class="todo-place">Upward Brewing</span>
+                <span class="todo-desc">Beautiful setting with an adjacent fun short hike</span>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
     <!-- ─── HOUSE / RENO ─────────────────────────────── -->
     <section id="house" data-field="ink" data-nav="dark">
       <div class="house-top">
+        <div class="house-head">
+          <h2>This is<br>our house.</h2>
+        </div>
         <div class="house-photo">
           <img src="photos/house-hero.jpg" alt="Our house in Swan Lake" loading="lazy" decoding="async">
         </div>
       </div>
 
       <div class="house-copy">
-        <p>We've been working really hard to get it ready for you. We can't wait for you to come see it!</p>
-        <p>It's been a real team effort — thank you to everyone who has helped along the way.</p>
+        <p>We have been working really hard to get it ready for you. We can't wait for you to come see it!</p>
+        <p>It's been a real team effort — thank you to everyone who has helped along the way!</p>
+        <p>Click through to see reno pics!</p>
       </div>
 
       <div class="reno-header">
@@ -2599,7 +2535,6 @@
           <div class="reno-slide"><img src="photos/reno-05.jpg" alt="" loading="lazy"></div>
           <div class="reno-slide"><img src="photos/reno-06.jpg" alt="" loading="lazy"></div>
           <div class="reno-slide"><img src="photos/reno-07.jpg" alt="" loading="lazy"></div>
-          <div class="reno-slide"><img src="photos/reno-08.jpg" alt="" loading="lazy"></div>
         </div>
       </div>
     </section>
@@ -2607,12 +2542,11 @@
     <!-- ─── END ──────────────────────────────────────── -->
     <section class="end" id="end" data-field="paper" data-nav="light">
       <div class="mega">
-        <em>See</em> you<br>in Swan Lake.</div>
+        <em>We hope</em> to see<br>you in Bethel.</div>
     </section>
 
     <script>
       /* ── Nav ─────────────────────────────────────────────────────── */
-
       const nav = document.getElementById('nav');
       const navLinks = [...nav.querySelectorAll('a[data-to]')];
 
@@ -2621,7 +2555,6 @@
         nav
           .classList
           .toggle('is-hidden', y < 120);
-
         const viewMid = y + window.innerHeight * 0.35;
         let current = null;
         document
@@ -2654,35 +2587,34 @@
       });
 
       /* ── FAQ ─────────────────────────────────────────────────────── */
-
       const FAQS = [
         {
           q: 'Are kids welcome?',
           a: 'Yes! It is a family affair, kids of all ages are welcome to join.'
         }, {
-          q: 'What\'s the weather like?',
-          a: 'Mid-August in the Catskills: warm days (75–85°F), cool-ish evenings. Bring a light layer for after sundown, and something for your feet that can handle a grass path in the dark.'
+          q: 'What\'s the dress code?',
+          a: 'The only thing we strongly request is sensible shoes 🙂 The celebration is in and around the 2 acres surrounding our house — think grass, hills, a meadow path — not suitable for heels. Beyond that, wear whatever you\'d like! We love a risky fashion choice (this is your permission to <a href="https://youtu.be/9WEod7GB4lk?si=XjO_OPp7lfseVDCF" style="text-decoration:underline" target="_blank">go for it</a>) but simple attire is equally welcome. There are no rules! Except the shoes.'
         }, {
           q: 'What about gifts?',
-          a: 'We know August weekends are precious and we\'re so grateful that we can gather the people we love to celebrate with us. Beyond that, we request no gifts!!'
+          a: 'We know August weekends are precious and we\'re so grateful that we can gather the people we love to celebrate with us. Beyond that, we request no gifts!! Having said this, if you would like to contribute in some way, there will be aspects of this event that will be made possible through the help of our friends and family. If you want a small job, we\'ll be sure to have one for you :)'
         }, {
-          q: 'What\'s the dress code?',
-          a: 'The only thing we strongly request is sensible shoes 🙂 The celebration is in and around the 2 acres surrounding our house — think grass, hills, a meadow path — not suitable for heels. Beyond that, wear whatever you\'d like! We love a risky fashion choice (this is your permission to really go for it) but simple attire is equally welcome. There are no rules! Except the shoes.'
+          q: 'What\'s the weather like?',
+          a: 'Mid-August in the Catskills: warm days (75–85°F), cool-ish evenings. Bring a light layer for after sundown, and something for your feet that can handle a grass path in the dark.'
         }
       ];
 
       const faqList = document.getElementById('faqList');
       faqList.innerHTML = FAQS
         .map((f, i) => `
-  <div class="faq-item">
-    <button class="q" aria-expanded="false">
-      <span class="idx">${String(i + 1).padStart(2, '0')}</span>
-      <span>${f.q}</span>
-      <span class="toggle" aria-hidden="true"></span>
-    </button>
-    <div class="a" role="region"><div><p>${f.a}</p></div></div>
-  </div>
-`)
+        <div class="faq-item">
+          <button class="q" aria-expanded="false">
+            <span class="idx">${String(i + 1).padStart(2, '0')}</span>
+            <span>${f.q}</span>
+            <span class="toggle" aria-hidden="true"></span>
+          </button>
+          <div class="a" role="region"><div><p>${f.a}</p></div></div>
+        </div>
+      `)
         .join('');
 
       faqList
@@ -2698,7 +2630,6 @@
         });
 
       /* ── RSVP wizard ─────────────────────────────────────────────── */
-
       const card = document.getElementById('rsvpCard');
       const progress = document.getElementById('rsvpProgress');
       const stepLabel = document.getElementById('stepLabel');
@@ -2756,13 +2687,19 @@
 
       function collectStep(s) {
         const step = card.querySelector(`.step[data-step="${s}"]`);
-        if (!step) return;
-        step.querySelectorAll('input, select, textarea').forEach(f => {
-          if (f.name) formData[f.name] = f.value.trim();
-        });
+        if (!step) 
+          return;
+        step
+          .querySelectorAll('input, select, textarea')
+          .forEach(f => {
+            if (f.name) 
+              formData[f.name] = f
+                .value
+                .trim();
+            }
+          );
       }
 
-      /* Attendance buttons */
       card
         .querySelectorAll('[data-attending]')
         .forEach(btn => {
@@ -2777,7 +2714,6 @@
           });
         });
 
-      /* Shuttle buttons */
       card
         .querySelectorAll('[data-shuttle]')
         .forEach(btn => {
@@ -2791,7 +2727,6 @@
           });
         });
 
-      /* Friday drinks buttons */
       const fridayNamesField = document.getElementById('fridayNamesField');
       card
         .querySelectorAll('[data-friday]')
@@ -2805,7 +2740,6 @@
           });
         });
 
-      /* Step navigation (delegated) */
       card.addEventListener('click', e => {
         const btn = e
           .target
@@ -2816,7 +2750,6 @@
         const flow = activeFlow();
         const idx = flow.indexOf(currentStep);
         if (btn.dataset.go === 'next') {
-          /* First step: branch on attending value */
           if (currentStep === '1' && attending === 'no') {
             showStep('d');
             return;
@@ -2827,13 +2760,10 @@
         }
       });
 
-      /* Finalize */
       const SHEET_URL = 'https://script.google.com/macros/s/AKfycbwHH-dgp_3R5A5M6kPj7TYzEOFdI6dACOV4V-ZmO7kpGf26tPkOlqgyQow-rAEGEeqC/exec';
 
       function finalize(accepted) {
         collectStep(currentStep);
-
-        /* POST to Google Sheets — fire and forget (no-cors, optimistic) */
         const payload = {
           attending: attending === 'yes'
             ? 'Yes'
@@ -2860,7 +2790,6 @@
             body: JSON.stringify(payload)
           }).catch(() => {});
         }
-
         const now = new Date();
         const stamp = `${String(now.getDate()).padStart(2, '0')}.${String(now.getMonth() + 1).padStart(2, '0')}.${now.getFullYear()}`;
         document
@@ -2869,31 +2798,30 @@
         if (accepted) {
           document
             .getElementById('confirmTitle')
-            .innerHTML = 'Yay! We can\'t wait to <em>celebrate with you</em>.';
+            .innerHTML = "Yay! We can't wait to <em>celebrate with you</em>.";
           document
             .getElementById('confirmMsg')
             .textContent = 'Your RSVP is in. Watch your inbox for shuttle and arrival details as we get closer to August.';
         } else {
           document
             .getElementById('confirmTitle')
-            .innerHTML = 'Thank you for letting us <em>know</em>.';
+            .innerHTML = "Thank you for letting us <em>know</em>.";
           document
             .getElementById('confirmMsg')
-            .textContent = 'You will be missed. We\'ll be thinking of you — and hoping to celebrate together another time.';
+            .textContent = "Thank you for letting us know. You will be missed!";
         }
         showStep('done');
       }
+
       document
         .getElementById('submitRsvp')
         .addEventListener('click', () => finalize(true));
       document
         .getElementById('submitDecline')
         .addEventListener('click', () => finalize(false));
-
       renderProgress();
 
       /* ── Story horizontal scroll ─────────────────────────────────── */
-
       (function initStoryScroll() {
         const track = document.getElementById('storyTrack');
         const fill = document.getElementById('storyFill');
@@ -2901,7 +2829,6 @@
         if (!track || !fill || !section) 
           return;
         
-        /* ── Progress bar ─────────────────────────────────────────── */
         function updateProgress() {
           const max = track.scrollWidth - track.clientWidth;
           fill.style.width = max > 0
@@ -2915,17 +2842,14 @@
         });
         updateProgress();
 
-        /* ── Lerp engine ──────────────────────────────────────────── */
-        let targetX = 0;
-        let rafId = null;
-
+        let targetX = 0,
+          rafId = null;
         function maxX() {
           return Math.max(0, track.scrollWidth - track.clientWidth);
         }
         function clamp(v) {
           return Math.max(0, Math.min(maxX(), v));
         }
-
         function tick() {
           const diff = targetX - track.scrollLeft;
           if (Math.abs(diff) < 0.5) {
@@ -2936,55 +2860,64 @@
           track.scrollLeft += diff * 0.1;
           rafId = requestAnimationFrame(tick);
         }
-
         function drive(delta) {
           targetX = clamp(targetX + delta);
           if (!rafId) 
             rafId = requestAnimationFrame(tick);
           }
         
-        /* ── Wheel ────────────────────────────────────────────────── */
         const EDGE_SLOP = 8;
-
         function storyInView() {
           const rect = section.getBoundingClientRect();
           return rect.top > -window.innerHeight * 0.15 && rect.bottom < window.innerHeight * 1.15;
         }
 
         window.addEventListener('wheel', e => {
-          if (!storyInView()) return;
-
-          const raw = Math.abs(e.deltaY) >= Math.abs(e.deltaX) ? e.deltaY : e.deltaX;
-          const delta = e.deltaMode === 1 ? raw * 20 : e.deltaMode === 2 ? raw * track.clientWidth : raw;
-
+          if (!storyInView()) 
+            return;
+          const raw = Math.abs(e.deltaY) >= Math.abs(e.deltaX)
+            ? e.deltaY
+            : e.deltaX;
+          const delta = e.deltaMode === 1
+            ? raw * 20
+            : e.deltaMode === 2
+              ? raw * track.clientWidth
+              : raw;
           const atEnd = targetX >= maxX() - EDGE_SLOP;
           const atStart = targetX <= EDGE_SLOP;
-          if (delta > 0 && atEnd) return;
-          if (delta < 0 && atStart) return;
-
+          if (delta > 0 && atEnd) 
+            return;
+          if (delta < 0 && atStart) 
+            return;
           e.preventDefault();
           drive(delta);
         }, {passive: false});
 
-        /* ── Keyboard ─────────────────────────────────────────────── */
         window.addEventListener('keydown', e => {
-          if (e.key !== 'ArrowLeft' && e.key !== 'ArrowRight') return;
-          if (!storyInView()) return;
+          if (e.key !== 'ArrowLeft' && e.key !== 'ArrowRight') 
+            return;
+          if (!storyInView()) 
+            return;
           e.preventDefault();
-          drive(e.key === 'ArrowRight' ? 220 : -220);
+          drive(
+            e.key === 'ArrowRight'
+            ? 220
+            : -220);
         });
 
-        /* ── Touch ────────────────────────────────────────────────── */
         let tx = 0,
           ty = 0,
-          horiz = null;
-        let lastTx = 0,
+          horiz = null,
+          lastTx = 0,
           lastTime = 0,
           vel = 0;
-
         section.addEventListener('touchstart', e => {
-          tx = lastTx = e.touches[0].clientX;
-          ty = e.touches[0].clientY;
+          tx = lastTx = e
+            .touches[0]
+            .clientX;
+          ty = e
+            .touches[0]
+            .clientY;
           lastTime = Date.now();
           vel = 0;
           horiz = null;
@@ -2994,27 +2927,34 @@
             rafId = null;
           }
         }, {passive: true});
-
         section.addEventListener('touchmove', e => {
-          const dx = e.touches[0].clientX - tx;
-          const dy = e.touches[0].clientY - ty;
-          if (horiz === null)
+          const dx = e
+            .touches[0]
+            .clientX - tx;
+          const dy = e
+            .touches[0]
+            .clientY - ty;
+          if (horiz === null) 
             horiz = Math.abs(dx) > Math.abs(dy);
-          if (!horiz) return;
+          if (!horiz) 
+            return;
           e.preventDefault();
           const now = Date.now();
           vel = (e.touches[0].clientX - lastTx) / Math.max(1, now - lastTime);
-          lastTx = e.touches[0].clientX;
+          lastTx = e
+            .touches[0]
+            .clientX;
           lastTime = now;
           drive(-dx);
-          tx = e.touches[0].clientX;
+          tx = e
+            .touches[0]
+            .clientX;
         }, {passive: false});
-
         section.addEventListener('touchend', () => {
-          if (!horiz) return;
+          if (!horiz) 
+            return;
           drive(-vel * 300);
         }, {passive: true});
-
       })();
 
       /* ── Hero scroll fade-out ────────────────────────────────────── */
@@ -3065,9 +3005,7 @@
         const next = document.getElementById('renoNext');
         if (!track || !viewport || !prev || !next) 
           return;
-        
         let index = 0;
-
         function visibleCount() {
           const w = window.innerWidth;
           if (w <= 860) 
@@ -3076,7 +3014,6 @@
             return 2;
           return 3;
         }
-
         function slideWidth() {
           const slide = track.querySelector('.reno-slide');
           if (!slide) 
@@ -3086,18 +3023,15 @@
             .getBoundingClientRect()
             .width + gap;
         }
-
         function maxIndex() {
           return Math.max(0, track.children.length - visibleCount());
         }
-
         function update() {
           index = Math.max(0, Math.min(index, maxIndex()));
           track.style.transform = `translateX(${ - index * slideWidth()}px)`;
           prev.disabled = index === 0;
           next.disabled = index >= maxIndex();
         }
-
         prev.addEventListener('click', () => {
           index--;
           update();
@@ -3107,8 +3041,6 @@
           update();
         });
         window.addEventListener('resize', update);
-
-        /* Touch/drag — simple swipe */
         let startX = 0,
           dragging = false;
         viewport.addEventListener('touchstart', e => {
@@ -3132,7 +3064,6 @@
             index--;
           update();
         }, {passive: true});
-
         update();
       })();
     </script>
